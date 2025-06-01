@@ -1,0 +1,122 @@
+/* Fund Details Container */
+.fund-details-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  /* Main Fund Card */ 
+  .fund-card {
+    flex: 1;
+    width: 280px;
+    background: #fff3f4; 
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(183, 28, 28, 0.15);
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    mat-card-header {
+      background: #c2185b;
+      color: white;
+      border-radius: 12px 12px 0 0;
+      padding: 12px;
+      font-weight: bold;
+    }
+  
+    mat-card-content {
+      padding: 15px;
+      font-size: 20px;
+      color: #6d0f2b; 
+    }
+  }
+  
+  /* Action Cards */
+  .action-card {
+    flex: 0.7;
+    height: 200px;
+    min-width: 180px;
+    text-align: center;
+    background: #fff3f4; 
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(183, 28, 28, 0.15);
+    transition: transform 0.2s ease-in-out;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    mat-card-header {
+      background: #c2185b;
+      color: white;
+      border-radius: 12px 12px 0 0;
+      padding: 12px;
+      font-weight: bold;
+    }
+  }
+  
+  /* Buttons */
+  .expense-btn, .report-btn {
+    width: 100%;
+    margin-top: 50px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  .expense-btn {
+    background: linear-gradient(to right, #f85562, #ef5350)!important;
+    color: white !important;
+  }
+  
+  .report-btn {
+    background: linear-gradient(to right, #c2185b, #f278a1)!important;
+    color: white!important;
+  }
+  
+  /* Transactions Table */
+  .transactions-table {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(183, 28, 28, 0.15);
+  
+    th {
+      background: #c2185b;
+      color: white;
+      font-weight: bold;
+      padding: 12px;
+      text-align: left;
+    }
+  
+    td {
+      padding: 12px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #f8bbd0;
+    }
+  
+    .income-text {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+  
+    .expense-text {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+  }
+  

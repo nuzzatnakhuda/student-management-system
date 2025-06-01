@@ -1,0 +1,102 @@
+/* Main Student Overview Container */
+.employee-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Overview Cards Container */
+  .overview-cards-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  
+  /* Total Students Card */
+  .total-student-card {
+    width: 250px;
+  }
+  
+  /* Add Student Card */
+  .add-student-card {
+    width: 250px;
+    text-align: center;
+  }
+  
+  /* Divider */
+  .divider {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 20px 0;
+    width: 100%;
+  }
+  
+  /* Grade-Wise Summary Container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+    padding: 16px;
+  }
+  
+  /* Grade Summary Card */
+  .grade-summary-card {
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  /* Button Styles */
+  .view-details-btn,
+  .add-student-btn {
+    background: linear-gradient(135deg, #d32f2f, #ff3d57);
+    color: white;
+    padding: 12px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .view-details-btn:hover,
+  .add-student-btn:hover {
+    background: linear-gradient(135deg, #ff3d57, #d32f2f);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .view-details-btn:active,
+  .add-student-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Card Title Styling */
+  .card-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #c2185b;
+  }
+  
+  /* Card Content Styling */
+  mat-card-content {
+    padding: 16px;
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    text-align: left;
+    color: #c2185b;
+  }
+  

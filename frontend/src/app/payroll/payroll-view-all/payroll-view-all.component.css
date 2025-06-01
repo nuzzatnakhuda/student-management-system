@@ -1,0 +1,101 @@
+/* Main Container Styling */
+.salary-table-card {
+  width: 100%;
+  padding: 20px;
+  background-color: #fbe1e1; /* Light Rose Red */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Title */
+.card-title {
+  color: #c2185b; /* Rose Red */
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Header and Data Cells */
+th, td {
+  padding: 12px;
+  border: 1px solid #e1e1e1; /* Light grey border */
+  text-align: left;
+}
+
+/* Header Styling */
+th {
+  background-color: #e91e63!important; /* Bold Rose Red */
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Row Hover Effects */
+tr:hover {
+  background-color: #f8d7da; /* Light pink on hover */
+}
+
+/* Footer (Total Row) Styling */
+.mat-footer-row {
+  background-color: #f8d7da;
+  font-weight: bold;
+}
+
+/* Totals Section Styling */
+.totals-table {
+  margin-top: 20px;
+  width: 100%;
+  border-top: 2px solid #c2185b; /* Rose Red */
+  border-bottom: 2px solid #c2185b;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Total Row Cells */
+.totals-table td {
+  padding: 10px;
+  text-align: justify;
+  font-size: 16px;
+  color: #c2185b; /* Rose Red */
+}
+
+.totals-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Total Styling */
+.totals-table strong {
+  color: #c2185b;
+}
+
+/* Table Scroll */
+.mat-elevation-z8 {
+  overflow-x: auto;
+  max-height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+  }
+
+  .totals-table td {
+    font-size: 14px;
+  }
+}

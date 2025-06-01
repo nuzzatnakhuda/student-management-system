@@ -1,0 +1,76 @@
+<h2 mat-dialog-title class="dialog-title">Promote Student</h2>
+
+<mat-dialog-content class="dialog-content">
+  
+  <form [formGroup]="promoteForm">
+    <p class="previous-grade-section">
+      Previous: 
+      <span class="grade-name">{{ this.gradeSection.grade_section.grade.name }}</span> 
+      <span class="section-name">{{ this.gradeSection.grade_section.name }}</span>
+    </p>
+    
+    
+    <!-- Grade Dropdown -->
+    <mat-form-field class="form-field full-width">
+      <mat-label>Grade</mat-label>
+      <mat-select formControlName="grade" (selectionChange)="fetchSections($event.value)">
+        <mat-option *ngFor="let grade of grades" [value]="grade.id">
+          {{ grade.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="promoteForm.get('grade')?.hasError('required')">
+        Grade is required.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Section Dropdown -->
+    <mat-form-field class="form-field full-width">
+      <mat-label>Section</mat-label>
+      <mat-select formControlName="grade_section_id" [disabled]="sections.length === 0">
+        <mat-option *ngFor="let section of sections" [value]="section.id">
+          {{ section.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="promoteForm.get('grade_section_id')?.hasError('required')">
+        Section is required.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Academic Year -->
+    <mat-form-field class="full-width">
+      <mat-label>Academic Year</mat-label>
+      <mat-select formControlName="academic_year" required>
+          <mat-option *ngFor="let year of academicYears" [value]="year">
+              {{ year }}
+          </mat-option>
+      </mat-select>
+      <mat-error *ngIf="f['academic_year'].touched && f['academic_year'].hasError('required')">
+          Academic Year is required.
+      </mat-error>
+  </mat-form-field>
+  
+
+    <!-- Enrollment Date -->
+    <mat-form-field class="form-field full-width">
+      <mat-label>Enrollment Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="enrollment_date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="promoteForm.get('enrollment_date')?.hasError('required')">
+        Enrollment Date is required.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Remarks -->
+    <mat-form-field class="form-field full-width">
+      <mat-label>Remarks</mat-label>
+      <textarea matInput formControlName="remarks"></textarea>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button class="promote-button" color="primary" [disabled]="!promoteForm.valid" (click)="onSubmit()">Promote</button>
+</mat-dialog-actions>

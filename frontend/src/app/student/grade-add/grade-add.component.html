@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Add New Grade</h2>
+<mat-dialog-content>
+  <form [formGroup]="gradeForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <mat-label>Grade Name</mat-label>
+      <input matInput formControlName="name" required />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Fee</mat-label>
+      <input matInput formControlName="fee" type="number" required />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" required></textarea>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-button type="button" (click)="onClose()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="gradeForm.invalid">Save</button>
+    </div>
+  </form>
+</mat-dialog-content>

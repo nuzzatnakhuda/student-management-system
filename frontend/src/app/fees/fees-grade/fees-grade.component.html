@@ -1,0 +1,203 @@
+<mat-card class="student-card">
+  <!-- <div class="cards-container">
+    <mat-card class="summary-card">
+      <h3 class="card-title">Monthly Fees Overview</h3>
+      <mat-card-content>
+        <p><strong>Pending:</strong> {{ monthlyTotalFees.total_pending_amount | currency:'INR' }}</p>
+        <p><strong>Pending Students:</strong> {{ monthlyTotalFees.total_students_with_pending_fees }}</p>
+        <p><strong>Paid:</strong> {{ monthlyTotalFees.total_paid_amount | currency:'INR' }}</p>
+        <p><strong>Paid Students:</strong> {{ monthlyTotalFees.students_who_paid }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+   -->
+  <hr>
+  <h2>Month Wise for Selected Grade</h2>
+  <hr>
+  <div class="month-wise-cards-container">
+    <div *ngFor="let month of monthDataByGrade" class="month-wise-card">
+      <h3 class="card-title">{{ month.month | date: 'MMMM yyyy' }}</h3>
+      <mat-card-content>
+        <p><strong>Total Amount:</strong> {{ (month.total_pending_amount+month.total_paid_amount) | currency:'INR' }}</p>
+        <p><strong>Total Students:</strong> {{ (month.students_who_paid+month.total_students_with_pending_fees) }}</p>
+        <p><strong>Total Pending Amount:</strong> {{ month.total_pending_amount | currency:'INR' }}</p>
+        <p><strong>Pending Students:</strong> {{ month.total_students_with_pending_fees }}</p>
+        <p><strong>Total Paid Amount:</strong> {{ month.total_paid_amount | currency:'INR' }}</p>
+        <p><strong>Paid Students:</strong> {{ month.students_who_paid }}</p>
+        <button mat-raised-button class="pending-fees-button" (click)="pendingFees(gradeId,month.month)">Pending Fees Students</button>
+        <button mat-raised-button class="paid-fees-button" (click)="paidFees(gradeId,month.month)">Paid Fees Students</button>
+      </mat-card-content>
+    </div>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  <hr>
+  <mat-card-header class="card-header">
+    <mat-card-title class="card-title">Student Details </mat-card-title>
+  </mat-card-header>
+  <div >
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="searchQuery" (input)="onSearchChange($event)" placeholder="Search...">
+      </mat-form-field>
+      <div *ngIf="isShown">
+        <h3>{{students.length}} students</h3>
+
+        <table mat-table [dataSource]="students" class="student-table">
+          <!-- Student Name Column -->
+          <ng-container matColumnDef="full_name">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Student Name</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.first_name }} {{ student.last_name }}
+            </td>
+          </ng-container>
+
+          <!-- Father Name Column -->
+          <ng-container matColumnDef="father_name">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Father's Name</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.father_name }}</td>
+          </ng-container>
+
+          <!-- Date of Birth Column -->
+          <ng-container matColumnDef="date_of_birth">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Date of Birth</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.date_of_birth | date:'yyyy-MM-dd' }}
+            </td>
+          </ng-container>
+
+          <!-- Gender Column -->
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Gender</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.gender }}</td>
+          </ng-container>
+
+          <!-- Contact Number Column -->
+          <ng-container matColumnDef="contact_number">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Contact Number</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.contact_number }}</td>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Email</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.email }}</td>
+          </ng-container>
+
+          <!-- Address Column -->
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Address</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.address }}</td>
+          </ng-container>
+
+          <!-- Grade Column -->
+          <ng-container matColumnDef="grade">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Grade</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{
+              student.student_enrollment[0]?.grade_section?.grade?.name }} {{
+              student.student_enrollment[0]?.grade_section?.name }}</td>
+          </ng-container>
+
+          <!-- Enrollment Date Column -->
+          <ng-container matColumnDef="enrollment_date">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Enrollment Date</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.student_enrollment[0]?.enrollment_date
+              |
+              date:'yyyy-MM-dd' }}</td>
+          </ng-container>
+
+          <!-- View Details Column -->
+          <ng-container matColumnDef="view_details">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Actions</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">
+              <button class="view-details-btn" (click)="viewStudentDetails(student.id)">View Fee Details</button>
+            </td>
+          </ng-container>
+
+
+          <!-- Header and Row Definitions -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <div *ngIf="!isShown">
+        <h3>{{searchStudents.length}} students</h3>
+        <table mat-table [dataSource]="searchStudents" class="student-table">
+
+          <!-- Student Name Column -->
+          <ng-container matColumnDef="full_name">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Student Name</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.first_name }} {{ student.last_name }}
+            </td>
+          </ng-container>
+
+          <!-- Father Name Column -->
+          <ng-container matColumnDef="father_name">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Father's Name</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.father_name }}</td>
+          </ng-container>
+
+          <!-- Date of Birth Column -->
+          <ng-container matColumnDef="date_of_birth">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Date of Birth</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.date_of_birth | date:'yyyy-MM-dd' }}
+            </td>
+          </ng-container>
+
+          <!-- Gender Column -->
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Gender</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.gender }}</td>
+          </ng-container>
+
+          <!-- Contact Number Column -->
+          <ng-container matColumnDef="contact_number">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Contact Number</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.contact_number }}</td>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Email</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.email }}</td>
+          </ng-container>
+
+          <!-- Address Column -->
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Address</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.address }}</td>
+          </ng-container>
+
+          <!-- Grade Column -->
+          <ng-container matColumnDef="grade">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Grade</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{
+              student.student_enrollment[0]?.grade_section?.grade?.name }} {{
+              student.student_enrollment[0]?.grade_section?.name }}</td>
+          </ng-container>
+
+          <!-- Enrollment Date Column -->
+          <ng-container matColumnDef="enrollment_date">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Enrollment Date</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">{{ student.student_enrollment[0]?.enrollment_date
+              |
+              date:'yyyy-MM-dd' }}</td>
+          </ng-container>
+
+          <!-- View Details Column -->
+          <ng-container matColumnDef="view_details">
+            <th mat-header-cell *matHeaderCellDef class="table-header">Actions</th>
+            <td mat-cell *matCellDef="let student" class="table-cell">
+              <button class="view-details-btn" (click)="viewStudentDetails(student.id)">View Fee Details</button>
+            </td>
+          </ng-container>
+
+          <!-- Similar columns as above for search result view -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      
+    </mat-card-content>
+  </div>
+</mat-card>

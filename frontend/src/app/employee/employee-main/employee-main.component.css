@@ -1,0 +1,116 @@
+/* Employee Overview Container */
+.employee-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Container for Total Employee Count and Add Employee Cards */
+.overview-cards-container {
+  display: flex;
+  gap: 20px; /* Controls the gap between the two cards */
+  margin-bottom: 20px;
+  align-items: flex-start; /* Ensures cards are aligned to the left */
+}
+
+/* Styling for Total Employees Card */
+.total-employee-card {
+  width: 48%; /* Adjust width to make the cards fit next to each other */
+}
+
+/* Styling for Add Employee Card */
+.add-employee-card {
+  width: 48%; /* Adjust width to make the cards fit next to each other */
+}
+
+/* Styling for Horizontal Rule */
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 20px 0;
+  width: 100%; /* Full width for HR */
+}
+
+/* Container for Designation Wise Cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start; /* Aligns the cards to the left */
+  padding: 16px;
+}
+
+/* General Styling for Cards */
+.overview-card {
+  width: 250px; /* Card width adjusted for a compact layout */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 16px; /* Add space between cards */
+}
+
+/* Add Employee Button Styling */
+.add-employee-btn {
+  background: linear-gradient(135deg, #d32f2f, #ff3d57);
+  color: white;
+  padding: 12px 0;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+}
+
+/* Hover and Active States for Add Employee Button */
+.add-employee-btn:hover {
+  background: linear-gradient(135deg, #ff3d57, #d32f2f);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.add-employee-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* View Details Button Styling */
+.view-details-btn {
+  background: linear-gradient(135deg, #ff4b5c, #ff6f91);
+  color: white;
+  padding: 12px 0;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+}
+
+/* Hover Effect for View Details Button */
+.view-details-btn:hover {
+  background: linear-gradient(135deg, #ff6f91, #d54b62);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Title Styling */
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #c2185b;
+}
+
+/* Content Styling */
+mat-card-content {
+  padding: 16px;
+  font-size: 1.5rem;
+}

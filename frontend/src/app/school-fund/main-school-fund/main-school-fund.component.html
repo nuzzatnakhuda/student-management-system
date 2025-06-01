@@ -1,0 +1,55 @@
+<!-- Container for Fund & Action Cards -->
+<div class="fundActionCardsContainer">
+  <!-- School Fund Card -->
+  <mat-card class="fundCardClass">
+    <h3 class="card-title">School Fund</h3>
+    <mat-card-content>
+      <p><strong>Current Fund Balance:</strong> ₹{{ current_balance | number:'1.0-2' }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="view-details-btn" (click)="viewFundDetails()">View Details</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Make Expense Card -->
+  <mat-card class="actionCardClass">
+    <h3 class="card-title">Make Expense</h3>
+    <mat-card-actions>
+      <button class="action-btn expense-btn" (click)="makeExpense()">Make Expense</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Get Income Card -->
+  <mat-card class="actionCardClass">
+    <h3 class="card-title">Get Income</h3>
+    <mat-card-actions>
+      <button class="action-btn income-btn" (click)="getIncome()">Get Income</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Generate Report Card -->
+  <mat-card class="actionCardClass">
+    <h3 class="card-title">Generate Report</h3>
+    <mat-card-actions>
+      <button class="action-btn report-btn" (click)="generateReport()">Generate Report</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<hr class="section-divider">
+
+<!-- Month-wise Income and Expense Cards -->
+<div *ngIf="monthData && monthData.length > 0" class="monthWiseCardsContainerClass">
+  <h2 class="section-heading">Month-Wise Income and Expenses</h2>
+
+  <div class="month-wise-card-container">
+    <mat-card *ngFor="let month of monthData" class="monthWiseCardClass">
+      <h3 class="card-title">{{ month.month | date: 'MMMM yyyy' }}</h3>
+      <mat-card-content>
+        <p><strong>Total Income:</strong> ₹{{ month.total_income | number:'1.0-2' }}</p>
+        <p><strong>Total Expense:</strong> ₹{{ month.total_expense | number:'1.0-2' }}</p>
+        <button class="view-details-btn" (click)="viewFundDetailsMonth(month.month)">View Details</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

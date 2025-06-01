@@ -1,0 +1,126 @@
+/* Card Styling */
+.employee-card {
+    background-color: #ffffff; /* Clean white background for a professional look */
+    border-radius: 12px; /* Rounded corners for a modern touch */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+  }
+  
+  .employee-card:hover {
+    transform: translateY(-8px); /* Elevation on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Title Styling */
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #e63946; /* Bold red for emphasis */
+    text-align: left;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+  
+  /* Table Styling */
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+  }
+  
+  /* Table Header Styling */
+  .employee-table th {
+    background-color: #ffe6e6; /* Light rose-pink header */
+    color: #e63946; /* Bold red text */
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #f1f1f1;
+    text-transform: uppercase;
+    font-size: 14px; /* Reduced font size */
+  }
+  
+  /* Table Cell Styling */
+  .employee-table td {
+    padding: 12px 15px;
+    color: #333;
+    font-size: 13px; /* Reduced font size */
+    line-height: 1.5;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  /* Row Background Color - Alternating */
+  .employee-table tr:nth-child(odd) {
+    background-color: #ffe0e0; /* Light rose-red background for odd rows */
+  }
+  
+  .employee-table tr:nth-child(even) {
+    background-color: #fff; /* White background for even rows */
+  }
+  
+  /* Hover Effect on Table Rows */
+  .employee-table tr:hover {
+    background-color: #ffd1d1; /* Light pink on hover */
+  }
+  
+  /* Button Styling */
+  .view-details-btn {
+    background-color: #e63946!important; /* Bold rose-red button */
+    color: white!important;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 12px; /* Reduced font size */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #d32f2f!important; /* Slightly darker red on hover */
+    transform: translateY(-3px); /* Elevation effect */
+  }
+  
+  .view-details-btn:active {
+    background-color: #c2185b!important; /* Darker red when clicked */
+    transform: translateY(0);
+  }
+  
+  /* Header Styling for Table */
+  .red-roses-header {
+    background: #e63946; /* Deep red background */
+    color: white;
+    padding: 18px 20px;
+    font-size: 1.5rem; /* Reduced font size */
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .employee-card {
+      padding: 12px;
+    }
+  
+    .card-title {
+      font-size: 20px;
+    }
+  
+    .employee-table th, .employee-table td {
+      font-size: 12px;
+      padding: 10px 12px;
+    }
+  
+    .view-details-btn {
+      font-size: 11px;
+    }
+  }
+  

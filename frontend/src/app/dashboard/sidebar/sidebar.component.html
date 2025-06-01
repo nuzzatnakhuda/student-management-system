@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+      <div *ngIf="!isTeacher()">
+      <a mat-list-item routerLink="/dashboard/students" routerLinkActive="active">
+        <mat-icon>group</mat-icon>
+        <span>Students</span>
+      </a>
+      
+      <a mat-list-item routerLink="/dashboard/employees" routerLinkActive="active">
+        <mat-icon>school</mat-icon>
+        <span>Teachers</span>
+      </a>
+      <div *ngIf="isMorning()">
+      <a mat-list-item routerLink="/dashboard/fees" routerLinkActive="active">
+        <mat-icon>payments</mat-icon>
+        <span>Fees</span>
+      </a>
+      <a mat-list-item routerLink="/dashboard/payroll" routerLinkActive="active">
+        <mat-icon>attach_money</mat-icon>
+        <span>Salary</span>
+      </a>
+      </div>
+      <a mat-list-item routerLink="/dashboard/school-fund" routerLinkActive="active">
+        <mat-icon>account_balance</mat-icon>
+        <span>School Fund</span>
+      </a>
+      <a mat-list-item routerLink="/dashboard/other-fund" routerLinkActive="active">
+        <mat-icon>savings</mat-icon>
+        <span>Other Fund</span>
+      </a>
+      <!-- Past Students -->
+      <a mat-list-item routerLink="/dashboard/pastStudents" routerLinkActive="active">
+        <mat-icon>history</mat-icon>
+        <span>Past Students</span>
+      </a>
+      <!-- Past Employees -->
+      <a mat-list-item routerLink="/dashboard/pastEmployees" routerLinkActive="active">
+        <mat-icon>history</mat-icon>
+        <span>Past Employees</span>
+      </a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

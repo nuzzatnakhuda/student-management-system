@@ -1,0 +1,133 @@
+/* General Styling */
+:host {
+  display: block;
+  padding: 20px;
+  background-color: #fff5f7; /* Very light rose background */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Card Styling */
+mat-card {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.student-info-card {
+  background: #ffe6ea; /* Soft rose background for student info */
+  color: #990024; /* Deep rose for text */
+}
+
+.monthly-fee-card {
+  background: #fff5f7; /* Slightly lighter rose for fee details */
+  color: #660018; /* Muted rose for contrast */
+}
+
+/* Card Headers */
+mat-card-header {
+  background: linear-gradient(45deg, #ff6680, #ffccd5); /* Rose gradient */
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+mat-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Table Styling */
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff; /* Pure white for table */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background: #ff8093!important; /* Muted rose header */
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  font-size: 14px;
+  color: #4b4b4b; /* Neutral gray text */
+}
+
+tr:nth-child(even) {
+  background: #ffebef; /* Light rose for alternate rows */
+}
+
+tr:hover {
+  background: #ffc2cf; /* Subtle rose highlight on hover */
+}
+
+/* Buttons */
+button {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+button[color="primary"] {
+  background: #ff4d6a; /* Bold red-rose for primary actions */
+  color: white;
+}
+
+button[color="primary"]:hover {
+  background: #e5445f; /* Slightly darker rose on hover */
+}
+
+button[color="accent"] {
+  background: #ffccd5; /* Soft rose for secondary actions */
+  color: #660018; /* Deep rose text */
+  border: 1px solid #660018;
+}
+
+button[color="accent"]:hover {
+  background: #ff99aa; /* Darker rose hover for secondary actions */
+  color: #990024;
+}
+
+/* Payment Status */
+.status-label {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.status-label.paid {
+  background-color: #e1ffe1; /* Light green for paid status */
+  color: #006600; /* Dark green text */
+}
+
+.status-label.unpaid {
+  background-color: #ffe6ea; /* Light rose for unpaid status */
+  color: #990024; /* Deep rose text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  mat-card {
+    padding: 10px;
+  }
+
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  button {
+    padding: 5px 10px;
+  }
+}

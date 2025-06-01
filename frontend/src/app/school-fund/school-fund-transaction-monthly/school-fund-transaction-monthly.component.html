@@ -1,0 +1,21 @@
+<table class="transaction-table">
+    <thead>
+      <tr>
+        <th>Transaction Date</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Balance After</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of fundTransactions" [ngClass]="{'income-row': transaction.type === 'income', 'expense-row': transaction.type === 'expense'}">
+        <td>{{ transaction.transaction_date | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ transaction.type }}</td>
+        <td>₹{{ transaction.amount | number:'1.0-2' }}</td>
+        <td>₹{{ transaction.balance_after | number:'1.0-2' }}</td>
+        <td>{{ transaction.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

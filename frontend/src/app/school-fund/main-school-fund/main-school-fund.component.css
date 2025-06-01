@@ -1,0 +1,218 @@
+/* General Styling for Cards */
+.mat-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Flex Container for Fund & Action Cards */
+.fundActionCardsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* School Fund Card Styling */
+.fundCardClass {
+  width: 400px;
+  background: linear-gradient(135deg, #ffebee, #f8bbd0); /* Light pink gradient */
+  border: 2px solid #f48fb1;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fundCardClass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(244, 143, 177, 0.4);
+}
+
+/* Card Titles */
+.card-title {
+  font-size: 1.8rem;
+  color: #c2185b; /* Deep rose */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Card Content Text */
+.mat-card-content p {
+  font-size: 1.2rem;
+  color: #444; /* Dark gray */
+  line-height: 1.6;
+}
+
+/* Action Cards Styling */
+.actionCardClass {
+  width: 280px;
+  background: rgb(212, 235, 253);
+  border: 2px solid #e0e0e0;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.actionCardClass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Common Button Styling */
+.action-btn {
+  width: 100%;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer; 
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Make Expense Button */
+.expense-btn {
+  background: linear-gradient(135deg, #d32f2f, #c2185b); /* Red to rose */
+  color: white;
+  box-shadow: 0 4px 8px rgba(211, 47, 47, 0.2);
+}
+
+.expense-btn:hover {
+  background: linear-gradient(135deg, #c2185b, #b71c1c);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(211, 47, 47, 0.3);
+}
+
+.expense-btn:active {
+  background: linear-gradient(135deg, #ad1457, #c2185b);
+  transform: translateY(1px);
+}
+
+/* Get Income Button */
+.income-btn {
+  background: linear-gradient(135deg, #388e3c, #2e7d32); /* Green shades */
+  color: white;
+  box-shadow: 0 4px 8px rgba(56, 142, 60, 0.2);
+}
+
+.income-btn:hover {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(56, 142, 60, 0.3);
+}
+
+/* Generate Report Button */
+.report-btn {
+  background: linear-gradient(135deg, #1976d2, #1565c0); /* Blue shades */
+  color: white;
+  box-shadow: 0 4px 8px rgba(25, 118, 210, 0.2);
+}
+
+.report-btn:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(25, 118, 210, 0.3);
+}
+
+/* View Details Button */
+.view-details-btn {
+  background: linear-gradient(135deg, #d32f2f, #c2185b);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.view-details-btn:hover {
+  background: linear-gradient(135deg, #c2185b, #d32f2f);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Divider Styling */
+.section-divider {
+  border: 0;
+  border-top: 2px solid #f48fb1; /* Rose-colored border */
+  margin: 30px 0;
+  opacity: 0.7;
+}
+
+/* Month-wise Cards Section */
+.monthWiseCardsContainerClass {
+  margin-top: 40px;
+}
+
+.section-heading {
+  font-size: 2rem;
+  color: #c2185b;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Month-wise Cards Grid */
+.month-wise-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Month-wise Cards */
+.monthWiseCardClass {
+  background: linear-gradient(135deg, #ffebee, #f8bbd0); /* Light pink gradient */
+  border: 2px solid #f48fb1;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.monthWiseCardClass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(244, 143, 177, 0.4);
+}
+
+.monthWiseCardClass .card-title {
+  font-size: 1.6rem;
+  color: #c2185b;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.monthWiseCardClass p {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.monthWiseCardClass p strong {
+  color: #c2185b;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .fundActionCardsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fundCardClass,
+  .actionCardClass {
+    width: 100%;
+    max-width: 350px;
+  }
+}

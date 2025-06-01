@@ -1,0 +1,34 @@
+<mat-card class="add-fund-card">
+    <mat-card-header>
+      <mat-card-title>Add Fund Type</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <!-- Add Fund Type Button -->
+      <button mat-raised-button class="add-fund-btn" (click)="onAddFundType()">Add Fund Type</button>
+    </mat-card-content>
+  </mat-card>
+  
+  <!-- Horizontal Rule (HR) after Add Fund Type card -->
+  <hr class="separator-line">
+  
+  <!-- Heading for All Funds -->
+  <h2 class="all-funds-heading" style="text-align: left;">All Funds</h2>
+  
+  <!-- Fund Cards Section -->
+  <div class="fund-cards-container">
+    <div *ngFor="let fund of fundTypes" class="fund-card" style="display: inline-block; margin-right: 20px; width: calc(33.33% - 20px);">
+      <mat-card class="fund-card-content">
+        <mat-card-header>
+          <mat-card-title>{{ fund.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Initial Balance: ₹{{ fund.initial_balance }}</p>
+          <p>Current Balance: ₹{{ fund.current_balance }}</p>
+          <p>Description: {{ fund.description }}</p>
+          <button mat-raised-button class="view-details-btn" (click)="viewFundDetails(fund.id)">View Details</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  

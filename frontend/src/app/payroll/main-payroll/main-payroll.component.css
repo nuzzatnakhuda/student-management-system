@@ -1,0 +1,204 @@
+/* Main Container */
+.generate-fee-container {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Card Container for Generate Salary & Total Pending Salary */
+.summary-card {
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fde9e9;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading Style */
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #c2185b; /* Rose Red */
+  margin-bottom: 15px;
+}
+
+/* Button Style */
+.generate-fees-btn {
+  background: linear-gradient(135deg, #d32f2f, #ff3d57); /* Red/Rose Gradient */
+  color: white;
+  padding: 12px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.generate-fees-btn:hover {
+  background: linear-gradient(135deg, #ff3d57, #d32f2f);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Month-wise Pending Salary Section */
+.month-wise-cards-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Section Heading */
+.section-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c2185b; /* Rose Red */
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Month-wise Card Container */
+.month-wise-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Month-wise Individual Cards */
+.month-wise-card {
+  width: 350px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #eef5fd; /* Light blue background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.month-wise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.month-wise-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1565c0; /* Blue */
+  margin-bottom: 10px;
+}
+
+.month-wise-card mat-card-content {
+  padding: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.month-wise-card mat-card-content p {
+  margin: 8px 0;
+}
+
+/* Divider */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #d32f2f, #ff3d57); /* Rose gradient */
+  width: 100%;
+  margin: 20px 0;
+}
+/* View Button Style */
+.view-details-btn {
+  background: linear-gradient(135deg, #d32f2f, #ff3d57); /* Red/Rose Gradient */
+  color: white;
+  padding: 10px 0;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background: linear-gradient(135deg, #ff3d57, #d32f2f); /* Reverse Gradient on Hover */
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.view-details-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.paid{
+  background-color: rgb(221, 251, 221);
+  text-align: left;
+}
+
+.pending{
+  background-color: #fcc9c9;
+  text-align: left;
+}
+
+.pending-amount{
+  color:#910404
+}
+
+.paid-amount{
+  color: rgb(1, 33, 1);
+}
+
+/* View Salary Card */
+.view-salary-card {
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fde9e9; /* Light pink background to match theme */
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.view-salary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* View Salary Button */
+.view-salary-btn {
+  background: linear-gradient(135deg, #d32f2f, #ff3d57); /* Red/Rose Gradient */
+  color: white;
+  padding: 12px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.view-salary-btn:hover {
+  background: linear-gradient(135deg, #ff3d57, #d32f2f);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.view-salary-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}

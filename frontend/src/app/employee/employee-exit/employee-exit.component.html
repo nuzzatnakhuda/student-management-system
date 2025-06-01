@@ -1,0 +1,33 @@
+<mat-card *ngIf="employee" class="employee-card">
+  <mat-card-header class="employee-card-header">
+    <mat-card-title class="employee-title">Employee Details: {{ employee.full_name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="employee-card-content">
+    <div class="employee-details">
+      <div class="employee-info">
+        <p><strong>Employee Full Name: </strong>{{ employee.full_name }}</p>
+        <p><strong>Date Of Birth: </strong>{{ employee.date_of_birth | date:'yyyy-MM-dd' }}</p>
+        <p><strong>Gender: </strong>{{ employee.gender }}</p>
+        <p><strong>Contact Number: </strong>{{ employee.contact_number }}</p>
+        <p><strong>Email: </strong>{{ employee.email }}</p>
+        <p><strong>Address: </strong>{{ employee.address }}</p>
+        <p><strong>Aadhar: </strong>{{ employee.aadhar }}</p>
+        <p><strong>Date of Join: </strong>{{ employee.job_detail.date_of_join | date:'yyyy-MM-dd' }}</p>
+        <p><strong>Session: </strong>{{ employee.job_detail.session.session }}</p>
+        <p><strong>Designation: </strong>{{ employee.job_detail.designation.designation }}</p>
+        <p><strong>Salary: </strong>{{ employee.salary.salary | currency:'INR' }}</p>
+        <p><strong>Provident Balance: </strong>{{ employee.employee_provident.accumulated_balance }}</p>
+        <!-- Add Date Picker -->
+        <mat-form-field>
+          <mat-label>Date of Exit</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="exitDate" placeholder="Choose date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Add Exit Button -->
+        <button mat-raised-button color="warn" (click)="confirmExit()">Exit</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

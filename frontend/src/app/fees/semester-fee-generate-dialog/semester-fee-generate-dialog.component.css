@@ -1,0 +1,120 @@
+
+:host {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  color: #4a4a4a;
+}
+
+.mat-dialog-container {
+  background: #fef6f9;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0px 4px 12px rgba(255, 105, 135, 0.2);
+}
+
+h2[mat-dialog-title] {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #d6336c; 
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+  
+  .mat-form-field-wrapper {
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0px 2px 6px rgba(255, 105, 135, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .mat-form-field-label {
+    color: #d6336c !important; 
+    font-weight: 500;
+  }
+
+  .mat-input-element {
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+
+  &:hover .mat-form-field-wrapper {
+    box-shadow: 0px 4px 8px rgba(255, 105, 135, 0.25);
+  }
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+
+  button {
+    min-width: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button[mat-button] {
+    color: #d6336c;
+    background: transparent;
+    border: 2px solid #d6336c;
+
+    &:hover {
+      background: #d6336c;
+      color: white;
+    }
+  }
+
+  button[mat-flat-button] {
+    background: #d6336c;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(255, 105, 135, 0.25);
+
+    &:hover {
+      background: #c6285b;
+      box-shadow: 0px 6px 12px rgba(255, 105, 135, 0.35);
+    }
+  }
+}
+
+mat-datepicker-toggle {
+  color: #d6336c !important;
+}
+
+.mat-calendar {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(255, 105, 135, 0.2);
+}
+
+.mat-calendar-header {
+  background: #d6336c;
+  color: white;
+}
+
+.mat-calendar-body-selected {
+  background: #d6336c !important;
+  color: white !important;
+}
+
+@media (max-width: 600px) {
+  mat-dialog-content {
+    padding: 16px;
+  }
+
+  mat-dialog-actions {
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  }
+}

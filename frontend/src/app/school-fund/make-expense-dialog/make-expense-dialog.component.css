@@ -1,0 +1,68 @@
+.dialog-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #b22222; 
+    margin-bottom: 10px;
+  }
+  
+  .dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    padding: 10px;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+  
+  mat-form-field {
+    background: #fff5f5; 
+    border-radius: 8px;
+    padding: 5px;
+  }
+  
+  .mat-mdc-form-field-flex {
+    background-color: #ffe4e1 !important; 
+    border-radius: 5px;
+  }
+  
+  .mat-mdc-form-field.mat-focused {
+    .mdc-notched-outline {
+      border-color: #b22222 !important; 
+    }
+  }
+  
+  .mat-mdc-form-field-label {
+    color: #8b0000 !important; 
+    font-weight: 500;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .cancel-button {
+    color: #8b0000; 
+    font-weight: bold;
+  }
+  
+  .confirm-button {
+    background: #b22222 !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .confirm-button:disabled {
+    background: #d3d3d3 !important;
+  }
+  
+  .confirm-button:hover {
+    background: #a02020 !important; 
+  }
+  

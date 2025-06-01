@@ -1,0 +1,88 @@
+.student-card {
+  background-color: #fff0f0;
+  /* Soft pink background */
+  border: 1px solid #f48fb1;
+  /* Rose border */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(200, 50, 50, 0.2);
+  padding: 20px;
+}
+
+.student-card-header {
+  background-color: #f8bbd0;
+  /* Light pink for the header */
+  color: #c2185b;
+}
+
+.student-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.student-card-content {
+  padding: 20px;
+}
+
+.student-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-h3 {
+  text-align: center;
+  color: #c2185b;
+  /* Deep rose color */
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 20px 0;
+  border-bottom: 2px solid #f8bbd0;
+  /* Light rose border */
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.student-hr {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+  /* Light gray */
+  margin: 20px 0;
+}
+
+.student-info p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.student-info strong {
+  color: #d32f2f;
+  /* Highlight labels with deep red */
+}
+
+/* Styling for the enrollment table */
+.student-enrollment-table {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #f8bbd0; /* Light rose border */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.student-enrollment-table th {
+  background-color: #f8bbd0; /* Light rose */
+  color: #c2185b; /* Deep rose */
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+.student-enrollment-table td {
+  padding: 8px;
+  color: #ad1457; /* Muted rose */
+}
+
+.student-enrollment-table tr:hover {
+  background-color: #fde2e7; /* Slight hover effect */
+}

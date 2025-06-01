@@ -1,0 +1,60 @@
+/* Dialog Title */
+.dialog-title {
+    color: #b71c1c; /* Dark red */
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  
+  /* Content Styling */
+  .dialog-content {
+    font-size: 14px;
+    color: #4b4b4b;
+    padding: 10px 15px;
+  }
+  
+  /* Info Section */
+  .info-section {
+    background: rgba(244, 143, 177, 0.1); /* Light rose background */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-left: 4px solid #e91e63; /* Accent border */
+  }
+  
+  .info-section p {
+    margin: 5px 0;
+  }
+  
+  .amount {
+    font-size: 16px;
+    font-weight: bold;
+    color: #c2185b; /* Deep rose */
+  }
+  
+  /* Form Field Styling */
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #e91e63 !important;
+  }
+  
+  /* Buttons */
+  .cancel-btn {
+    color: #b71c1c;
+    font-weight: bold;
+  }
+  
+  .submit-btn {
+    background-color: #d81b60; /* Rose primary color */
+    color: white;
+    font-weight: bold;
+  }
+  
+  .submit-btn:hover {
+    background-color: #b71c1c; /* Darker red */
+  }
+  

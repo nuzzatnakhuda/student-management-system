@@ -1,0 +1,94 @@
+<div class="fees-dashboard">
+  <!-- Overview Cards Container -->
+  <div class="overview-cards-container">
+    <!-- Generate Fees Card -->
+    <mat-card class="summary-card generate-fees-card">
+      <h3 class="card-title">Generate Fee</h3>
+      <mat-card-actions>
+        <button class="generate-fees-btn" (click)="onGenerateFees()">Generate Fees</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Add Semester Fee Card -->
+    <mat-card class="summary-card semester-fee-card">
+      <h3 class="card-title">Add Semester Fee</h3>
+      <mat-card-actions>
+        <button class="generate-fees-btn" (click)="onAddSemesterFee()">Add Semester Fee</button>
+        <button class="generate-fees-btn" (click)="onViewSemesterFee()">View Semester Fee</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Add Exam Fee Card -->
+    <mat-card class="summary-card exam-fee-card">
+      <h3 class="card-title">Add Exam Fee</h3>
+      <mat-card-actions>
+        <button class="generate-fees-btn" (click)="onAddExamFee()">Add Exam Fee</button>
+        <button class="generate-fees-btn" (click)="onViewExamFee()">View Exam Fee</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Total Fees Card -->
+    <mat-card class="summary-card total-fees-card">
+      <h3 class="card-title">Total Fees Overview For All Months</h3>
+      <mat-card-content>
+        <p><strong>Pending:</strong> {{ totalFeeData.total_pending_amount | currency:'INR' }}</p>
+        <p><strong>Pending Students:</strong> {{ totalFeeData.total_students_with_pending_fees }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Monthly Fees Card -->
+    <mat-card class="summary-card">
+      <h3 class="card-title">Monthly Fees Overview For Current Month</h3>
+      <mat-card-content>
+        <p><strong>Total:</strong> {{ monthlyTotalFees.total_pending_amount+ monthlyTotalFees.total_paid_amount | currency:'INR' }}</p>
+        <p><strong>Total Students:</strong> {{ monthlyTotalFees.students_who_paid+monthlyTotalFees.total_students_with_pending_fees }}</p>
+        <p><strong>Pending:</strong> {{ monthlyTotalFees.total_pending_amount | currency:'INR' }}</p>
+        <p><strong>Pending Students:</strong> {{ monthlyTotalFees.total_students_with_pending_fees }}</p>
+        <p><strong>Paid:</strong> {{ monthlyTotalFees.total_paid_amount | currency:'INR' }}</p>
+        <p><strong>Paid Students:</strong> {{ monthlyTotalFees.students_who_paid }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <hr>
+
+  <h2>Grade Wise</h2>
+  <!-- Grade-Wise Cards Container -->
+  <div class="grade-wise-cards-container">
+    <div *ngFor="let grade of gradeData" class="grade-wise-card">
+      <h3 class="card-title">{{ grade.grade_name }}</h3>
+      <mat-card-content>
+        <p><strong>Total Amount:</strong> {{getTotalAmount(grade.totalPendingAmount,grade.totalPaidAmount) | currency:'INR'}}</p>
+        <p><strong>Total Students:</strong> {{(grade.totalPaidStudents+grade.totalPendingStudents)}}</p>
+        <p><strong>Total Pending Amount:</strong> {{ grade.totalPendingAmount | currency:'INR' }}</p>
+        <p><strong>Pending Students:</strong> {{ grade.totalPendingStudents }}</p>
+        <p><strong>Total Paid Amount:</strong> {{ grade.totalPaidAmount | currency:'INR' }}</p>
+        <p><strong>Paid Students:</strong> {{ grade.totalPaidStudents }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="view-details-btn" (click)="viewDetails(grade.grade_id)">View Details</button>
+      </mat-card-actions>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Month Wise</h2>
+  <!-- Month-Wise Cards Container -->
+  <div class="month-wise-cards-container">
+    <div *ngFor="let month of monthData" class="month-wise-card">
+      <h3 class="card-title">{{ month.month | date: 'MMMM yyyy' }}</h3>
+      <mat-card-content>
+        <p><strong>Total Amount:</strong> {{getTotalAmount(month.total_pending_amount,month.total_paid_amount) | currency:'INR' }}</p>
+        <p><strong>Total Students:</strong> {{ month.total_students_with_pending_fees+month.students_who_paid }}</p>
+        <p><strong>Total Pending Amount:</strong> {{ month.total_pending_amount | currency:'INR' }}</p>
+        <p><strong>Total Paid Amount:</strong> {{ month.total_paid_amount | currency:'INR' }}</p>
+        <p><strong>Pending Students:</strong> {{ month.total_students_with_pending_fees }}</p>
+        <p><strong>Paid Students:</strong> {{ month.students_who_paid }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="view-details-btn" (click)="viewMonthDetails(month.month)">View Details</button>
+      </mat-card-actions>
+    </div>
+  </div>
+</div>

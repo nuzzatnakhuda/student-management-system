@@ -1,0 +1,242 @@
+/* General Card Styling */
+.student-card {
+    background-color: #fff0f0; /* Soft pink background */
+    border: 1px solid #f48fb1; /* Rose border */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(200, 50, 50, 0.2);
+    padding: 20px;
+  }
+  
+  /* Title Styling */
+  .card-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d32f2f; /* Deep red */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  .student-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-header {
+    background-color: #f8bbd0; /* Light rose background for headers */
+    color: #c2185b; /* Deep rose text */
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #e91e63; /* Rose border */
+  }
+  
+  .table-cell {
+    padding: 10px;
+    color: #ad1457; /* Muted rose text */
+    border-bottom: 1px solid #f8bbd0;
+  }
+  
+  .actions-cell {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Button Styling */
+  button {
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 8px 16px;
+  }
+  
+  /* View Details Button */
+  .view-details-btn {
+    background-color: #ec407a; /* Vibrant pink */
+    color: white;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #d81b60; /* Darker pink */
+    transform: scale(1.05);
+  }
+  
+  /* Hover Effect for Table Rows */
+  .student-table tr:hover .table-cell {
+    background-color: #fce4ec; /* Slightly darker pink on hover */
+    transition: background-color 0.3s ease;
+  }
+  
+  h3 {
+    color: #c2185b; /* Deep rose color */
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 20px 0;
+    border-bottom: 2px solid #f8bbd0; /* Light rose border */
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Cards Container */
+  .cards-container {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap; /* Ensure it adjusts for smaller screens */
+  }
+  
+  .info-card {
+    width: 250px;
+    color: #c2185b;
+  }
+  
+  /* Rose-Themed Button */
+  .rose-themed-button {
+    background-color: #ec407a !important; /* Rose-themed background */
+    color: white !important; /* White text for contrast */
+    font-weight: bold; /* Bold text for emphasis */
+    border-radius: 8px; /* Rounded corners */
+    padding: 8px 16px; /* Add padding for better size */
+    text-transform: uppercase; /* Make text uppercase for consistency */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .rose-themed-button:hover {
+    background-color: #ef5350; /* Darker rose color on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .rose-themed-button:active {
+    background-color: #d32f2f; /* Darker shade for active state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Revert shadow */
+    transform: scale(1); /* Remove zoom effect */
+  }
+  
+  .red-roses-header {
+    background: #e63946; /* Deep rose-red background */
+    color: white; /* White text for contrast */
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+  }
+  
+  .red-roses-header span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #f1faee; /* Soft off-white color for the count, ensuring good contrast */
+    margin-left: 8px;
+  }
+  hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, #d32f2f, #ff3d57); /* Rose gradient */
+    width: 100%;
+    margin: 0;
+  }
+ /* Heading for Month-Wise Section */
+h2 {
+    font-size: 26px; /* Slightly larger font for section heading */
+    font-weight: bold;
+    color: #c2185b; /* Rose Red theme */
+    margin-bottom: 15px; /* Spacing below the heading */
+    text-align: center; /* Center the heading */
+    text-transform: uppercase; /* Make the heading text all caps */
+  }
+  
+  /* Month-Wise Cards Container */
+  .month-wise-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 20px; /* Space between cards */
+    justify-content: flex-start; /* Align items to the start */
+    margin-top: 20px; /* Space above the container */
+  }
+  
+  /* Individual Month-Wise Card Styling */
+  .month-wise-card {
+    width: 250px; /* Fixed width for consistent card size */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    background-color: #fdeeee; /* Light red background to match theme */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+  }
+  
+  .month-wise-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  }
+  
+  /* Card Title Styling */
+  .month-wise-card .card-title {
+    font-size: 18px; /* Slightly smaller than section heading */
+    font-weight: bold;
+    color: #c2185b; /* Rose Red theme */
+    margin-bottom: 10px; /* Space below the title */
+    text-align: center; /* Center-align the title */
+  }
+  
+  /* Card Content Styling */
+  .month-wise-card mat-card-content {
+    padding: 10px; /* Inner padding for content */
+    font-size: 1rem; /* Standard font size */
+    color: #555; /* Neutral text color */
+  }
+  
+  .month-wise-card mat-card-content p {
+    margin: 8px 0; /* Space between paragraphs */
+  }
+  
+  /* Add Margin to the Bottom of Cards */
+  .month-wise-card .mat-card-actions {
+    margin-top: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    width: 250px;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Add space between buttons */
+    margin-top: 20px;
+  }
+
+  .pending-fees-button {
+    width: 100%; /* Full-width button */
+    padding: 12px;
+    background: linear-gradient(135deg, #d32f2f, #ff3d57) !important; /* Gradient from dark red to rose */
+    color: white!important;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .paid-fees-button {
+    width: 100%; /* Full-width button */
+    padding: 12px;
+    background: linear-gradient(135deg, #a1f986, #79f233)!important; /* Gradient from light rose to dark red */
+    color: white!important;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  
+  .pending-fees-button:hover,
+  .paid-fees-button:hover {
+    opacity: 0.8; /* Add a hover effect */
+  }
+   

@@ -1,0 +1,17 @@
+.school-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5a0221;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9d7e3;
+  }
+  

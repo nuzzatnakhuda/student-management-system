@@ -1,0 +1,125 @@
+/* General Form Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fce4ec; /* Light rose background */
+    margin: 0;
+    padding: 20px;
+}
+
+.form-card {
+    max-width: 800px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+mat-card-header {
+    background-color: #e91e63; /* Rose header */
+    color: #ffffff;
+    padding: 16px;
+    text-align: center;
+    border-bottom: 4px solid #f06292; /* Highlight border */
+}
+
+mat-card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+mat-card-content {
+    padding: 24px;
+}
+
+/* Form Section Styles */
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f8bbd0; /* Subtle divider between sections */
+}
+
+.form-section h3 {
+    color: #e91e63; /* Section header in rose */
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Input Field Styles */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+mat-form-field.mat-form-field {
+    font-size: 1rem;
+}
+
+mat-label {
+    color: #e91e63; /* Rose label color */
+}
+
+.mat-input-element {
+    padding: 0.5rem;
+}
+
+/* Button Styles */
+button[type="submit"] {
+    background-color: #e91e63;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+    background-color: #d81b60;
+}
+
+/* Optional Section Styles */
+.past-school-section {
+    padding: 16px;
+    border: 2px dashed #f06292;
+    background-color: #fce4ec;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Checkbox Styles */
+mat-checkbox {
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-card {
+        padding: 10px;
+    }
+
+    mat-card-header {
+        font-size: 1.2rem;
+    }
+
+    .form-section h3 {
+        font-size: 1.2rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+/* Dropdown Styling */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+mat-select {
+    color: #e91e63; /* Rose color */
+}

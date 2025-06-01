@@ -1,0 +1,75 @@
+/* Dialog Title */
+.dialog-title {
+  color: #d81b60; /* Dark rose color */
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.full-width {
+  width: 100%;
+}
+/* Dialog Content Styling */
+.dialog-content {
+  padding: 20px;
+  background-color: #fff5f8; /* Light rose background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.expense-form {
+  width: 100%;
+}
+
+/* Form Field */
+.form-field {
+  margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d81b60; /* Dark rose border */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Error Text */
+.error-text {
+  color: #f44336; /* Red color for error messages */
+}
+
+/* Buttons Styling */
+.cancel-btn {
+  background-color: #f44336; /* Red for cancel button */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 1rem;
+  &:hover {
+    background-color: #d32f2f;
+  }
+}
+
+.confirm-btn {
+  background-color: #d81b60; /* Dark rose for confirm button */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  &:hover {
+    background-color: #c2185b;
+  }
+}
+
+/* Dialog Actions */
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #fff5f8;
+  border-top: 1px solid #d81b60;
+}

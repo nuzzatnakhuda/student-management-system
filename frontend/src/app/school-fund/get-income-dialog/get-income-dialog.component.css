@@ -1,0 +1,66 @@
+.dialog-title {
+    color: #c2185b; /* Rose Red */
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+  
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #fce4ec; /* Light pink background */
+  }
+  
+  .mat-form-field-label {
+    color: #880e4f !important; /* Dark Rose Label */
+  }
+  
+  .mat-input-element {
+    color: #c2185b !important; /* Text Color */
+  }
+  
+  .mat-datepicker-toggle {
+    color: #c2185b !important;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+  
+  .cancel-button {
+    color: #c2185b;
+    font-weight: bold;
+  }
+  
+  .confirm-button {
+    background-color: #c2185b;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .confirm-button:disabled {
+    background-color: #f8bbd0 !important; /* Lighter rose when disabled */
+    color: #ffffff !important;
+  }
+  
+  .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #c2185b !important;
+  }
+  
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color: #c2185b !important;
+  }
+  

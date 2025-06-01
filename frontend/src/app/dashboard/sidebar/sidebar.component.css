@@ -1,0 +1,36 @@
+/* Full height sidenav container */
+.sidenav-container {
+    height: 100%;
+    display: flex;
+    width: 250px;
+  }
+  
+  /* Sidenav styling */
+  .sidenav {
+    width: 250px;
+    background-color: #f9d7e3;
+    color: white;
+  }
+  
+  mat-nav-list a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  mat-nav-list a:hover {
+    background-color: var(--mat-accent-color);
+  }
+  
+  mat-nav-list a.active {
+    background-color: var(--mat-warn-color);
+    font-weight: bold;
+  }
+
+  mat-icon{
+    padding-right: 20px;
+  }
+
+  span{
+    color: #5a0221;
+  }
+  

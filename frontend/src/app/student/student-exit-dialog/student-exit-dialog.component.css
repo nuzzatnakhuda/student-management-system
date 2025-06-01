@@ -1,0 +1,14 @@
+/* student-exit-dialog.component.css */
+.full-width {
+    width: 100%;
+  }
+  
+  mat-dialog-title {
+    color: #d32f2f; /* Rose theme primary color */
+    font-weight: bold;
+  }
+  
+  mat-dialog-actions button {
+    margin-left: 8px;
+  }
+  

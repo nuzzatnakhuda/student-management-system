@@ -1,0 +1,96 @@
+/* Card Styling */
+.employee-card {
+    background-color: #fff0f0; /* Soft pink background */
+    border: 1px solid #f48fb1; /* Rose border */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(200, 50, 50, 0.2);
+    padding: 20px;
+  }
+  
+  /* Title Styling */
+  .card-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d32f2f; /* Deep red */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-header {
+    background-color: #f8bbd0; /* Light rose background for headers */
+    color: #c2185b; /* Deep rose text */
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #e91e63; /* Rose border */
+  }
+  
+  .table-cell {
+    padding: 10px;
+    color: #ad1457; /* Muted rose text */
+    border-bottom: 1px solid #f8bbd0;
+  }
+  
+  /* Actions Cell */
+  .actions-cell {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Button Styling for Separate Columns */
+  button {
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 8px 16px;
+  }
+  
+  /* View Details Button */
+  .view-details-btn {
+    background-color: #ec407a; /* Vibrant pink */
+    color: white;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #d81b60; /* Darker pink */
+    transform: scale(1.05);
+  }
+  
+  /* Update Button */
+  .update-btn {
+    background-color: #42a5f5; /* Light blue */
+    color: white;
+  }
+  
+  .update-btn:hover {
+    background-color: #1e88e5; /* Darker blue */
+    transform: scale(1.05);
+  }
+  
+  /* Exit Button */
+  .exit-btn {
+    background-color: #f44336; /* Vibrant red */
+    color: white;
+  }
+  
+  .exit-btn:hover {
+    background-color: #d32f2f; /* Darker red */
+    transform: scale(1.05);
+  }
+  
+  
+  /* Hover Effect for Rows */
+  .employee-table tr:hover .table-cell {
+    background-color: #fce4ec; /* Slightly darker pink on hover */
+    transition: background-color 0.3s ease;
+  }
+  

@@ -1,0 +1,33 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: flex-start; /* Align cards to the left */
+    gap: 16px; /* Add spacing between cards */
+    padding: 20px;
+  }
+  
+  .dashboard-card {
+    width: 300px; /* Set a fixed width for a neat layout */
+    background: #ffe4e1; /* Light rose pastel background */
+    border-left: 6px solid #d32f2f; /* Red accent border */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-3px); /* Slight lift effect */
+  }
+  
+  mat-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b71c1c; /* Dark red title */
+  }
+  
+  mat-card-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #880e4f; /* Deep rose color */
+  }
+  

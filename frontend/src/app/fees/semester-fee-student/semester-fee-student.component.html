@@ -1,0 +1,120 @@
+<div class="table-container">
+  <div *ngIf="pendingStudents.length>0">
+    <h2 class="table-title">Pending Semester Fees ({{ semester }})</h2>
+    <p>Total Students : {{pendingStudents.length}}</p>
+    <!-- Pending Students Table -->
+    <table mat-table [dataSource]="pendingStudents" class="mat-elevation-z8">
+      <!-- Table Columns for Pending Students -->
+      <ng-container matColumnDef="first_name">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.first_name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="father_name">
+        <th mat-header-cell *matHeaderCellDef> Father Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.father_name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="last_name">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.last_name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let student"> {{ student.email }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="contact">
+        <th mat-header-cell *matHeaderCellDef> Contact </th>
+        <td mat-cell *matCellDef="let student"> {{ student.contact_number }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="grade">
+        <th mat-header-cell *matHeaderCellDef> Grade </th>
+        <td mat-cell *matCellDef="let student"> {{ student.grade.name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="section">
+        <th mat-header-cell *matHeaderCellDef> Section </th>
+        <td mat-cell *matCellDef="let student"> {{ student.section_name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="amount_due">
+        <th mat-header-cell *matHeaderCellDef> Amount Due </th>
+        <td mat-cell *matCellDef="let student"> {{ student.amount_due }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="pay_now">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let student">
+          <button mat-button (click)="payNow(student)">Pay Now</button>
+        </td>
+      </ng-container>
+  
+      <!-- Table Headers & Rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+    <div *ngIf="paidStudents.length>0"> 
+    <!-- Paid Students Table -->
+    <h2 class="table-title">Paid Semester Fees ({{ semester }})</h2>
+  <p>Total Students : {{paidStudents.length}}</p>
+
+    <table mat-table [dataSource]="paidStudents" class="mat-elevation-z8">
+      <!-- Table Columns for Paid Students (Same as Pending) -->
+      <ng-container matColumnDef="first_name">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.first_name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="father_name">
+        <th mat-header-cell *matHeaderCellDef> Father Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.father_name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="last_name">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.last_name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let student"> {{ student.email }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="contact">
+        <th mat-header-cell *matHeaderCellDef> Contact </th>
+        <td mat-cell *matCellDef="let student"> {{ student.contact_number }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="grade">
+        <th mat-header-cell *matHeaderCellDef> Grade </th>
+        <td mat-cell *matCellDef="let student"> {{ student.grade.name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="section">
+        <th mat-header-cell *matHeaderCellDef> Section </th>
+        <td mat-cell *matCellDef="let student"> {{ student.section_name }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="payment_date">
+        <th mat-header-cell *matHeaderCellDef> Payment Date </th>
+        <td mat-cell *matCellDef="let student"> {{ student.payment_date | date:'dd MMMM YYYY' }} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="view_details">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let student">
+          <button mat-button (click)="viewStudentDetails(student.student_id)">View Details</button>
+        </td>
+      </ng-container>
+  
+      <!-- Table Headers & Rows -->
+      <tr mat-header-row *matHeaderRowDef="paidDisplayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: paidDisplayedColumns;"></tr>
+    </table>
+    </div>
+  </div>
+  

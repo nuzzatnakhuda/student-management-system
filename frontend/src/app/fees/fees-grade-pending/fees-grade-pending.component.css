@@ -1,0 +1,127 @@
+/* General Card Styling */
+.student-card {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #f1f1f1; /* Subtle light gray border for professional feel */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for a professional touch */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Title Styling */
+.card-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #e63946; /* Bold rose-red */
+  text-align: left;
+  margin-bottom: 20px;
+  letter-spacing: 1px; /* Slight spacing for elegance */
+}
+
+/* Table Styling */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Roboto', sans-serif; /* Modern, clean font */
+}
+
+.table-header {
+  background-color: #fce4ec; /* Soft pink for headers */
+  color: #e63946; /* Rose-red text for headers */
+  font-weight: 500;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #f1f1f1; /* Subtle divider for separation */
+}
+
+.table-cell {
+  padding: 12px;
+  color: #333; /* Dark text for readability */
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Button Styling */
+button {
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 10px 20px;
+  min-width: 100px;
+}
+
+/* View Details Button Styling */
+/* Remove underline on focus or active state for the button */
+.view-details-btn {
+  background-color: #e63946; /* Bold rose-red */
+  color: white;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  min-width: 100px;
+  text-decoration: none; /* Remove underline */
+}
+
+/* Optionally, remove the underline effect when the button is focused */
+.view-details-btn:focus {
+  outline: none; /* Remove the focus outline */
+  text-decoration: none; /* Ensure no underline on focus */
+}
+
+/* Hover Effects */
+.view-details-btn:hover {
+  background-color: #d32f2f; /* Slightly darker red for hover */
+  transform: translateY(-2px); /* Hover effect: slight movement */
+}
+
+.view-details-btn:active {
+  background-color: #c2185b; /* Darker red when clicked */
+  transform: translateY(0);
+}
+
+/* Hover Effect for Table Rows */
+.student-table tr:hover .table-cell {
+  background-color: #f8f8f8; /* Light gray on hover for rows */
+  transition: background-color 0.3s ease;
+}
+
+/* Improved Header for Table */
+.red-roses-header {
+  background: #e63946; /* Deep rose-red background */
+  color: white; /* White text for contrast */
+  padding: 18px 25px;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for more depth */
+}
+
+/* Cleaner design for cards */
+.red-roses-header span {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ffffff; /* Soft white for count text */
+  margin-left: 8px;
+}
+
+/* Header separator */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #e63946, #ff4d6d); /* Gradient rose color */
+  width: 100%;
+  margin-top: 20px;
+}
+

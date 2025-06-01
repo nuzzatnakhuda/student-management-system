@@ -1,0 +1,29 @@
+/* Using Angular Material's primary color variable */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9d7e3;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-section p {
+    margin: 5px 0;
+    color: #f2538b; /* Light pink for copyright text */
+  }
+  .footer-section h3 {
+    color: #5a0221; /* Light pink for copyright text */
+  }
+
+  
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-section {
+      margin-bottom: 5px;
+    }
+  }
+  

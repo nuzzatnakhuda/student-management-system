@@ -1,0 +1,20 @@
+<div class="content-container">
+    <h1>{{semester}}</h1>
+    <div class="card-container">
+      <mat-card *ngFor="let semester of semesterData" class="exam-card">
+        <mat-card-title>{{ semester.grade.name }}</mat-card-title>
+        <mat-card-content> 
+          <p><strong>Total Students:</strong> {{ semester.total_students_with_paid_fees + semester.total_students_with_pending_fees }}</p>
+          <p><strong>Total Amount:</strong> {{ (semester.total_pending_amount + semester.total_paid_amount) | currency: 'INR' }}</p>
+          <p><strong>Pending Students:</strong> {{ semester.total_students_with_pending_fees }}</p>
+          <p><strong>Total Pending Amount:</strong> {{ semester.total_pending_amount | currency: 'INR' }}</p>
+          <p><strong>Paid Students:</strong> {{ semester.total_students_with_paid_fees }}</p>
+          <p><strong>Total Paid Amount:</strong> {{ semester.total_paid_amount | currency: 'INR' }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="viewDetails(semester.semester, semester.grade.id)">View Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  

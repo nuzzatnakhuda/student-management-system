@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Update Fees</h2>
+<mat-dialog-content>
+  <form [formGroup]="feesForm">
+    <mat-form-field class="full-width">
+      <mat-label>Current Fees</mat-label>
+      <input matInput formControlName="currentFees" [readonly]="true" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>New Fees</mat-label>
+      <input matInput formControlName="newFees" type="number" />
+      <mat-error *ngIf="feesForm.get('newFees')?.hasError('required')">
+        New fees are required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>New Description</mat-label>
+      <input matInput formControlName="newDescription" />
+      <mat-error *ngIf="feesForm.get('newDescription')?.hasError('required')">
+        Description is required.
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!feesForm.valid">
+    Update
+  </button>
+</mat-dialog-actions>

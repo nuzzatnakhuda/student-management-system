@@ -1,0 +1,142 @@
+/* Card Styling */
+.student-card {
+    background-color: #fff0f0; /* Soft pink background */
+    border: 1px solid #f48fb1; /* Rose border */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(200, 50, 50, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Title Styling */
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d32f2f; /* Deep red */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Search Field Styling */
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Table Styling */
+  .student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+  
+  .table-header {
+    background-color: #f8bbd0; /* Light rose background */
+    color: #c2185b; /* Deep rose text */
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #e91e63; /* Rose border */
+  }
+  
+  .table-cell {
+    padding: 10px;
+    color: #ad1457; /* Muted rose text */
+    border-bottom: 1px solid #f8bbd0;
+  }
+  
+  /* Hover Effect for Rows */
+  .student-table tr:hover .table-cell {
+    background-color: #fce4ec; /* Slightly darker pink on hover */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Actions Cell */
+  .actions-cell {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Button Styling */
+  button {
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 8px 16px;
+  }
+  
+  /* Specific Button Styles */
+  .view-details-btn {
+    background-color: #ec407a; /* Vibrant pink */
+    color: white;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #d81b60; /* Darker pink */
+    transform: scale(1.05);
+  }
+  
+  .update-btn {
+    background-color: #42a5f5; /* Light blue */
+    color: white;
+  }
+  
+  .update-btn:hover {
+    background-color: #1e88e5; /* Darker blue */
+    transform: scale(1.05);
+  }
+  
+  .exit-btn {
+    background-color: #f44336; /* Vibrant red */
+    color: white;
+  }
+  
+  .exit-btn:hover {
+    background-color: #d32f2f; /* Darker red */
+    transform: scale(1.05);
+  }
+  
+  .promote-btn {
+    background-color: #44f877; /* Vibrant green */
+    color: white;
+  }
+  
+  .promote-btn:hover {
+    background-color: #33c865; /* Darker green */
+    transform: scale(1.05);
+  }
+  
+  /* Student Count Header */
+  h3 {
+    color: #c2185b; /* Deep rose color */
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 20px 0;
+    border-bottom: 2px solid #f8bbd0; /* Light rose border */
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .red-roses-header {
+    background: #e63946; /* Deep rose-red background */
+    color: white; /* White text for contrast */
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+  }
+  
+  .red-roses-header span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #f1faee; /* Soft off-white color for the count, ensuring good contrast */
+    margin-left: 8px;
+  }
+  
+  

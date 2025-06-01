@@ -1,0 +1,53 @@
+<div class="employee-overview">
+    <!-- Total Students Card and Add Student Card placed side by side -->
+    <div class="overview-cards-container">
+      <mat-card class="overview-card total-student-card">
+        <mat-card-header>
+          <mat-card-title class="card-title">Total Students</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{ totalStudents}}</h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="view-details-btn" (click)="viewAllStudents()">View All Students</button>
+        </mat-card-actions>
+      </mat-card>
+      
+      <mat-card class="overview-card add-student-card">
+        <mat-card-header>
+          <mat-card-title class="card-title">Add New Student</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <button class="add-student-btn" (click)="addStudent()">Add Student</button>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="overview-card add-student-card">
+        <mat-card-header>
+          <mat-card-title class="card-title">Add New Grade</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <button class="add-student-btn" (click)="openGradeDialog()">Add Grade</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  
+    <!-- Horizontal Rule -->
+    <hr class="divider">
+  
+    <!-- Grade-Wise Student Count Cards -->
+    <div class="card-container">
+      <mat-card *ngFor="let grade of gradeWiseStudentCounts" class="overview-card grade-summary-card">
+        <mat-card-header>
+          <mat-card-title class="card-title">{{ grade.gradeName }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h3>Fees : {{grade.gradeFee}}</h3>
+          <p>{{ grade.studentCount }} Students</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="view-details-btn" (click)="viewGradeDetails(grade.gradeId)">View</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  

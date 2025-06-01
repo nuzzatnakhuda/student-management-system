@@ -1,0 +1,86 @@
+/* General Card Styling */
+.student-card {
+    background-color: #fff0f0; /* Soft pink background */
+    border: 1px solid #f48fb1; /* Rose border */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(200, 50, 50, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Title Styling */
+  .card-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d32f2f; /* Deep red */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  .student-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(200, 50, 50, 0.15);
+  }
+  
+  .table-header {
+    background-color: #f8bbd0; /* Light rose background for headers */
+    color: #c2185b; /* Deep rose text */
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #e91e63; /* Rose border */
+  }
+  
+  .table-row {
+    transition: background-color 0.3s ease;
+  }
+  
+  .table-row:hover {
+    background-color: #fdeaea; /* Soft pink on hover */
+  }
+  
+  .table-cell {
+    padding: 12px;
+    color: #ad1457; /* Muted rose text */
+    border-bottom: 1px solid #f8bbd0;
+  }
+  
+  /* Button Styling */
+  .actions-cell {
+    text-align: center;
+  }
+  
+  .view-details-btn {
+    background-color: #ec407a; /* Vibrant pink */
+    color: white!important;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #d81b60; /* Darker pink */
+    transform: scale(1.05);
+  }
+  
+  /* Heading */
+  h3 {
+    color: #c2185b; /* Deep rose color */
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 20px 0;
+    border-bottom: 2px solid #f8bbd0; /* Light rose border */
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  

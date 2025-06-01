@@ -1,0 +1,29 @@
+<h2 mat-dialog-title class="dialog-title">Get Income</h2>
+
+<form [formGroup]="incomeForm">
+  <div mat-dialog-content class="dialog-content">
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Transaction Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="transactionDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" formControlName="amount">
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions class="dialog-actions">
+    <button mat-button class="cancel-button" (click)="closeDialog()">Cancel</button>
+    <button mat-button class="confirm-button" color="primary" (click)="confirmIncome()" [disabled]="!incomeForm.valid">
+      Confirm
+    </button>
+  </div>
+</form>

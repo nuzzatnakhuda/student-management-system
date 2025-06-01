@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Add Semester Fee</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="semesterFeeForm">
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Semester</mat-label>
+        <mat-select formControlName="semester" required>
+          <mat-option *ngFor="let option of semesterOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Amount Due</mat-label>
+      <input matInput formControlName="amount_due" type="number" />
+    </mat-form-field>
+
+     <!-- Material Datepicker for Due Date -->
+     <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Due Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="due_date" required />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="onSubmit()">Save</button>
+</mat-dialog-actions>

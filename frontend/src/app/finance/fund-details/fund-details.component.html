@@ -1,0 +1,73 @@
+<div class="fund-details-container">
+    <!-- Fund Details Card -->
+    <mat-card class="fund-card">
+      <mat-card-header>
+        <mat-card-title>{{ fund?.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Initial Balance:</strong> ₹{{ fund?.initial_balance }}</p>
+        <p><strong>Current Balance:</strong> ₹{{ fund?.current_balance }}</p>
+        <p><strong>Description:</strong> {{ fund?.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Make Expense Card -->
+    <mat-card class="action-card">
+        <mat-card-header>
+            <mat-card-title>Make Expense</mat-card-title>
+        </mat-card-header>
+      <mat-card-content>
+        <button mat-raised-button class="expense-btn" (click)="makeExpense(fund?.id)">Make Expense</button>
+      </mat-card-content>
+    </mat-card>
+  
+    <!-- Generate Details Card -->
+    <mat-card class="action-card">
+        <mat-card-header>
+            <mat-card-title>Genertae Report</mat-card-title>
+        </mat-card-header>
+      <mat-card-content>
+        <button mat-raised-button class="report-btn" (click)="onGenerateReport()">Generate Report</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <!-- Transactions Table -->
+  <table mat-table [dataSource]="transactions" class="transactions-table">
+    <!-- Date Column -->
+    <ng-container matColumnDef="transaction_date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.transaction_date }} </td>
+    </ng-container>
+  
+    <!-- Type Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let transaction"> 
+        <span class="{{ transaction.type === 'income' ? 'income-text' : 'expense-text' }}">
+          {{ transaction.type | titlecase }}
+        </span>
+      </td>
+    </ng-container>
+  
+    <!-- Amount Column -->
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef> Amount (₹) </th>
+      <td mat-cell *matCellDef="let transaction"> ₹{{ transaction.amount }} </td>
+    </ng-container>
+  
+    <!-- Balance After Column -->
+    <ng-container matColumnDef="balance_after">
+      <th mat-header-cell *matHeaderCellDef> Balance After </th>
+      <td mat-cell *matCellDef="let transaction"> ₹{{ transaction.balance_after }} </td>
+    </ng-container>
+  
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.description }} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="['transaction_date', 'type', 'amount', 'balance_after', 'description']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['transaction_date', 'type', 'amount', 'balance_after', 'description'];"></tr>
+  </table>

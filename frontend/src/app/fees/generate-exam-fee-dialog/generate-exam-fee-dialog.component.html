@@ -1,0 +1,25 @@
+<!-- generate-exam-fee-dialog.component.html -->
+<h2 mat-dialog-title>Generate Exam Fee</h2>
+<mat-dialog-content>
+  <form [formGroup]="examFeeForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Exam Name</mat-label>
+      <input matInput formControlName="exam_name"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Amount Due</mat-label>
+      <input matInput type="number" formControlName="amount_due" />
+    </mat-form-field>
+<div *ngIf="showDate" >
+    <mat-form-field appearance="fill">
+      <mat-label>Due Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="due_date" (dateChange)="onDueDateChange()"/>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="examFeeForm.invalid">Generate Fee</button>
+  </form>
+</mat-dialog-content>

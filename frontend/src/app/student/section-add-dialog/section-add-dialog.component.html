@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Add Section</h2>
+<mat-dialog-content>
+  <form [formGroup]="sectionForm">
+    <!-- Grade ID (Read-only) -->
+    <mat-form-field class="full-width">
+      <mat-label>Grade ID</mat-label>
+      <input matInput formControlName="grade_id" [readonly]="true" />
+    </mat-form-field>
+
+    <!-- Section Name -->
+    <mat-form-field class="full-width">
+      <mat-label>Section Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter a single alphabet (A-Z)" />
+      <mat-error *ngIf="sectionForm.get('name')?.hasError('required')">
+        Section name is required.
+      </mat-error>
+      <mat-error *ngIf="sectionForm.get('name')?.hasError('pattern')">
+        Only a single uppercase alphabet (A-Z) is allowed.
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="!sectionForm.valid"
+  >
+    Add Section
+  </button>
+</mat-dialog-actions>

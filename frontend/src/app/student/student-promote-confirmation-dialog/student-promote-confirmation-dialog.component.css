@@ -1,0 +1,59 @@
+/* confirmation-dialog.component.css */
+
+/* Dialog Title Styling */
+.dialog-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d32f2f; /* Rose red color */
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Dialog Content Styling */
+.dialog-content {
+  font-size: 16px;
+  color: #333; /* Dark text for better readability */
+  text-align: center;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+/* Dialog Actions Styling */
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Cancel Button Styling */
+.cancel-button {
+  color: #d32f2f; /* Rose red color */
+  border: 1px solid #d32f2f;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #fce4ec; /* Light rose background */
+  color: #b71c1c; /* Darker rose text */
+}
+
+/* Confirm Button Styling */
+.confirm-button {
+  background-color: #e57373; /* Light rose red */
+  color: white;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+  background-color: #d32f2f; /* Darker rose red */
+}

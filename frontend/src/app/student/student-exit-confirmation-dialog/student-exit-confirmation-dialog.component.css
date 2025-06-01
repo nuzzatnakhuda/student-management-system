@@ -1,0 +1,6 @@
+/* confirmation-dialog.component.css */
+mat-dialog-title {
+    color: #d32f2f; /* Rose theme primary color */
+    font-weight: bold;
+  }
+  

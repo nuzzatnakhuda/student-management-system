@@ -1,0 +1,198 @@
+<mat-card class="student-info-card">
+    <mat-card-header>
+      <mat-card-title>Student Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="student">
+      <p><strong>Name:</strong> {{ student?.first_name }} {{ student?.last_name }}</p>
+      <p><strong>Father's Name:</strong> {{ student?.father_name }}</p>
+      <p><strong>Date of Birth:</strong> {{ student?.date_of_birth | date }}</p>
+      <p><strong>Gender:</strong> {{ student?.gender || 'N/A' }}</p>
+      <p><strong>Address:</strong> {{ student?.address }}</p>
+      <p><strong>Contact Number:</strong> {{ student?.contact_number }}</p>
+      <p><strong>Email:</strong> {{ student?.email }}</p>
+    </div>
+    </mat-card-content>
+  
+  </mat-card>
+  
+  <mat-card class="monthly-fee-card">
+    <mat-card-header>
+      <mat-card-title>Monthly Fee Records</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="monthlyFees" class="fee-table">
+        <!-- Month Column -->
+        <ng-container matColumnDef="month">
+          <th mat-header-cell *matHeaderCellDef>Month</th>
+          <td mat-cell *matCellDef="let fee">{{ fee.month | date: 'MMMM yyyy' }}</td>
+        </ng-container>
+  
+        <!-- Amount Due Column -->
+        <ng-container matColumnDef="amount_due">
+          <th mat-header-cell *matHeaderCellDef>Amount Due</th>
+          <td mat-cell *matCellDef="let fee">{{ fee.amount_due }}</td>
+        </ng-container>
+  
+        <!-- Amount Paid Column -->
+        <ng-container matColumnDef="amount_paid">
+          <th mat-header-cell *matHeaderCellDef>Amount Paid</th>
+          <td mat-cell *matCellDef="let fee">{{ fee.amount_paid }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="payment_date">
+          <th mat-header-cell *matHeaderCellDef>Payment Date</th>
+          <td mat-cell *matCellDef="let fee">{{ fee.payment_date | date: 'dd-MM-YYYY'}}</td>
+        </ng-container>
+  
+        <!-- Payment Status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let fee">
+            <span class="status-label" [ngClass]="{ 
+                'paid': fee.is_paid, 
+                'unpaid': !fee.is_paid 
+            }">
+              {{ fee.is_paid ? 'Paid' : 'Unpaid' }}
+            </span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let fee">
+            <button mat-raised-button color="primary" *ngIf="!fee.is_paid" (click)="payNow(fee)">
+              Pay Now
+            </button>
+            <button mat-raised-button color="accent" *ngIf="fee.is_paid" (click)="printReceipt(fee)">
+              Print Receipt
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+  <!-- Semester Fee Records -->
+<mat-card class="semester-fee-card">
+  <mat-card-header>
+    <mat-card-title>Semester Fee Records</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="semesterFees" class="fee-table">
+      <!-- Semester Column -->
+      <ng-container matColumnDef="semester">
+        <th mat-header-cell *matHeaderCellDef>Semester</th>
+        <td mat-cell *matCellDef="let fee">{{ fee.semester }}</td>
+      </ng-container>
+
+      <!-- Amount Due Column -->
+      <ng-container matColumnDef="amount_due">
+        <th mat-header-cell *matHeaderCellDef>Amount Due</th>
+        <td mat-cell *matCellDef="let fee">{{ fee.amount_due }}</td>
+      </ng-container>
+
+      <!-- Amount Paid Column -->
+      <ng-container matColumnDef="amount_paid">
+        <th mat-header-cell *matHeaderCellDef>Amount Paid</th>
+        <td mat-cell *matCellDef="let fee">{{ fee.amount_paid }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="payment_date">
+        <th mat-header-cell *matHeaderCellDef>Payment Date</th>
+        <td mat-cell *matCellDef="let fee">{{ fee.payment_date | date: 'dd-MM-yyyy' }}</td>
+      </ng-container>
+
+      <!-- Payment Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let fee">
+          <span class="status-label" [ngClass]="{ 
+              'paid': fee.is_paid, 
+              'unpaid': !fee.is_paid 
+          }">
+            {{ fee.is_paid ? 'Paid' : 'Unpaid' }}
+          </span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let fee">
+          <button mat-raised-button color="primary" *ngIf="!fee.is_paid" (click)="paySemesterFee(student,fee)">
+            Pay Now
+          </button>
+          <button mat-raised-button color="accent" *ngIf="fee.is_paid" (click)="printSemesterReceipt(student,fee)">
+            Print Receipt
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="semesterColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: semesterColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+<!-- Exam Fee Records -->
+<mat-card class="exam-fee-card">
+  <mat-card-header>
+    <mat-card-title>Exam Fee Records</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="examFees" class="fee-table">
+      <!-- Exam Column -->
+      <ng-container matColumnDef="exam">
+        <th mat-header-cell *matHeaderCellDef>Exam</th>
+        <td mat-cell *matCellDef="let fee">{{ fee.exam_name }}</td>
+      </ng-container>
+
+      <!-- Amount Due Column -->
+      <ng-container matColumnDef="amount_due">
+        <th mat-header-cell *matHeaderCellDef>Amount Due</th>
+        <td mat-cell *matCellDef="let fee">{{ fee.amount_due }}</td>
+      </ng-container>
+
+      <!-- Amount Paid Column -->
+      <ng-container matColumnDef="amount_paid">
+        <th mat-header-cell *matHeaderCellDef>Amount Paid</th>
+        <td mat-cell *matCellDef="let fee">{{ fee.amount_paid }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="payment_date">
+        <th mat-header-cell *matHeaderCellDef>Payment Date</th>
+        <td mat-cell *matCellDef="let fee">{{ fee.payment_date | date: 'dd-MM-yyyy' }}</td>
+      </ng-container>
+
+      <!-- Payment Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let fee">
+          <span class="status-label" [ngClass]="{ 
+              'paid': fee.is_paid, 
+              'unpaid': !fee.is_paid 
+          }">
+            {{ fee.is_paid ? 'Paid' : 'Unpaid' }}
+          </span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let fee">
+          <button mat-raised-button color="primary" *ngIf="!fee.is_paid" (click)="payExamFee(student,fee)">
+            Pay Now
+          </button>
+          <button mat-raised-button color="accent" *ngIf="fee.is_paid">
+            Paid
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="examColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: examColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

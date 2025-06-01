@@ -1,0 +1,22 @@
+<!-- student-exit-dialog.component.html -->
+<h2 mat-dialog-title>Student Exit</h2>
+<mat-dialog-content>
+  <form [formGroup]="exitForm">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Exit Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="exit_date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Exit Reason</mat-label>
+      <textarea matInput formControlName="exit_reason"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="warn" (click)="onExit()" [disabled]="!exitForm.valid">
+    Exit
+  </button>
+</mat-dialog-actions>

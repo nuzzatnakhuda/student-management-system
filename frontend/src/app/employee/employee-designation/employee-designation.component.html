@@ -1,0 +1,100 @@
+<mat-card class="employee-card">
+  <mat-card-header>
+    <mat-card-title class="card-title">All {{ designation }} Details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="employees" class="employee-table">
+      <!-- Employee Name Column -->
+      <ng-container matColumnDef="full_name">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Employee Name</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          {{ employee.employee.full_name }}
+        </td>
+      </ng-container>
+
+      <!-- Date of Birth Column -->
+      <ng-container matColumnDef="date_of_birth">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Date of Birth</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          {{ employee.employee.date_of_birth | date: 'yyyy-MM-dd' }}
+        </td>
+      </ng-container>
+
+      <!-- Gender Column -->
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Gender</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          {{ employee.employee.gender }}
+        </td>
+      </ng-container>
+
+      <!-- Contact Number Column -->
+      <ng-container matColumnDef="contact_number">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Contact Number</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          {{ employee.employee.contact_number }}
+        </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Email</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          {{ employee.employee.email }}
+        </td>
+      </ng-container>
+
+      <!-- Address Column -->
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Address</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          {{ employee.employee.address }}
+        </td>
+      </ng-container>
+
+      <!-- Aadhar Column -->
+      <ng-container matColumnDef="aadhar">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Aadhar</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          {{ employee.employee.aadhar }}
+        </td>
+      </ng-container>
+
+      <!-- Date of Join Column -->
+      <ng-container matColumnDef="date_of_join">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Date of Join</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          {{ employee.date_of_join | date: 'yyyy-MM-dd' }}
+        </td>
+      </ng-container>
+
+      <!-- View Details Column -->
+      <ng-container matColumnDef="view_details">
+        <th mat-header-cell *matHeaderCellDef class="table-header">View Details</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          <button class="view-details-btn" (click)="viewEmployeeDetails(employee.id)">View Details</button>
+        </td>
+      </ng-container>
+
+      <!-- Update Column -->
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Update </th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          <button class="update-btn" (click)="updateEmployee(employee.id)">Update Employees</button>
+        </td>
+      </ng-container>
+
+      <!-- Exit Column -->
+      <ng-container matColumnDef="exit">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Exit Employee</th>
+        <td mat-cell *matCellDef="let employee" class="table-cell">
+          <button class="exit-btn" (click)="exitEmployee(employee.id)">Exit Employee</button>
+        </td>
+      </ng-container>
+
+      <!-- Header and Row Definitions -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

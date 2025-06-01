@@ -1,0 +1,232 @@
+/* General Card Styling */
+.student-card {
+  background-color: #fff0f0; /* Soft pink background */
+  border: 1px solid #f48fb1; /* Rose border */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(200, 50, 50, 0.2);
+  padding: 20px;
+}
+
+/* Title Styling */
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d32f2f; /* Deep red */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Table Styling */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header {
+  background-color: #f8bbd0; /* Light rose background for headers */
+  color: #c2185b; /* Deep rose text */
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #e91e63; /* Rose border */
+}
+
+.table-cell {
+  padding: 10px;
+  color: #ad1457; /* Muted rose text */
+  border-bottom: 1px solid #f8bbd0;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 10px;
+}
+
+/* Button Styling */
+button {
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 8px 16px;
+}
+
+/* View Details Button */
+.view-details-btn {
+  background-color: #ec407a; /* Vibrant pink */
+  color: white;
+}
+
+.view-details-btn:hover {
+  background-color: #d81b60; /* Darker pink */
+  transform: scale(1.05);
+}
+
+/* Update Button */
+.update-btn {
+  background-color: #42a5f5; /* Light blue */
+  color: white;
+}
+
+.update-btn:hover {
+  background-color: #1e88e5; /* Darker blue */
+  transform: scale(1.05);
+}
+
+/* Exit Button */
+.exit-btn {
+  background-color: #f44336; /* Vibrant red */
+  color: white;
+}
+
+.exit-btn:hover {
+  background-color: #d32f2f; /* Darker red */
+  transform: scale(1.05);
+}
+
+/* Promote Button */
+.promote-btn {
+  background-color: #44f877; /* Light green */
+  color: white;
+}
+
+.promote-btn:hover {
+  background-color: #66f569; /* Slightly darker green */
+  transform: scale(1.05);
+}
+
+/* Hover Effect for Table Rows */
+.student-table tr:hover .table-cell {
+  background-color: #fce4ec; /* Slightly darker pink on hover */
+  transition: background-color 0.3s ease;
+}
+
+h3 {
+  color: #c2185b; /* Deep rose color */
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 20px 0;
+  border-bottom: 2px solid #f8bbd0; /* Light rose border */
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap; /* Ensure it adjusts for smaller screens */
+}
+
+.info-card {
+  width: 250px;
+  color: #c2185b;
+}
+
+/* Rose-Themed Button */
+.rose-themed-button {
+  background-color: #ec407a !important; /* Rose-themed background */
+  color: white !important; /* White text for contrast */
+  font-weight: bold; /* Bold text for emphasis */
+  border-radius: 8px; /* Rounded corners */
+  padding: 8px 16px; /* Add padding for better size */
+  text-transform: uppercase; /* Make text uppercase for consistency */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.rose-themed-button:hover {
+  background-color: #ef5350; /* Darker rose color on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.rose-themed-button:active {
+  background-color: #d32f2f; /* Darker shade for active state */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Revert shadow */
+  transform: scale(1); /* Remove zoom effect */
+}
+
+/* Add Section Card */
+.add-section-card {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid #e57373; /* Border matches the rose theme */
+  border-radius: 12px; /* Slightly more rounded corners */
+  background: #fff5f5 !important; /* Subtle light rose background */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted look */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-aligns content */
+  text-align: center; /* Center-aligns text */
+}
+
+.add-section-button {
+  background-color: #ec407a !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 12px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* Button shadow for depth */
+}
+
+.add-section-button:hover {
+  background-color: #d32f2f !important; /* Darker rose shade on hover */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.add-section-button:active {
+  background-color: #b71c1c !important; /* Even darker shade on click */
+  box-shadow: none;
+  transform: translateY(0); /* Reset lift effect */
+}
+
+/* Section Cards Layout */
+.sections-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap; /* Adjusts layout for smaller screens */
+}
+
+.section-card {
+  flex: 1 1 calc(33.333% - 16px); /* 3 cards per row with spacing */
+  min-width: 250px;
+  max-width: 250px;
+  color: #c2185b;
+  border: 1px solid #e57373;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.red-roses-header {
+  background: #e63946; /* Deep rose-red background */
+  color: white; /* White text for contrast */
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+}
+
+.red-roses-header span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #f1faee; /* Soft off-white color for the count, ensuring good contrast */
+  margin-left: 8px;
+}

@@ -1,0 +1,70 @@
+/* Container for the semester fee cards */
+.semester-fee-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    max-width: 1200px; /* Optional: set a max width for the container */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  /* Style for individual semester cards */
+  .semester-card {
+    width: calc(50% - 20px); /* 50% width for 2 cards per row, minus gap */
+    background-color: #f7e1e1; /* Light rose/pink background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 16px;
+  }
+  
+  /* Header style for the card */
+  .semester-header {
+    background-color: #f5c2c2; /* Soft rose pink */
+    border-radius: 10px 10px 0 0;
+    padding: 12px;
+  }
+  
+  /* Title styling */
+  .semester-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #9b2d20; /* Deep red */
+  }
+  
+  /* Content section style */
+  .semester-content {
+    background-color: #fff9f9; /* Very light rose pink */
+    padding: 16px;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  /* Information text style inside the content */
+  .semester-info {
+    font-size: 1em;
+    color: #9b2d20; /* Deep red */
+    margin-bottom: 10px;
+  }
+  
+  /* Button style */
+  .view-details-btn {
+    background-color: #9b2d20; /* Deep red */
+    color: #fff !important;
+    padding: 10px 16px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #7a1b15; /* Darker red on hover */
+  }
+  
+  /* Ensure responsiveness on smaller screens */
+  @media (max-width: 768px) {
+    .semester-card {
+      width: 100%; /* 1 card per row on small screens */
+    }
+  }
+  

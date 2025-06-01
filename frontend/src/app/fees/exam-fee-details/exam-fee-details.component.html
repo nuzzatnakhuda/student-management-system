@@ -1,0 +1,19 @@
+<div class="content-container">
+  <h1>{{examName}}</h1>
+  <div class="card-container">
+    <mat-card *ngFor="let exam of examsData" class="exam-card">
+      <mat-card-title>{{ exam.grade.name }}</mat-card-title>
+      <mat-card-content> 
+        <p><strong>Total Students:</strong> {{ exam.total_students_with_paid_fees + exam.total_students_with_pending_fees }}</p>
+        <p><strong>Total Amount:</strong> {{ (exam.total_pending_amount + exam.total_paid_amount) | currency: 'INR' }}</p>
+        <p><strong>Pending Students:</strong> {{ exam.total_students_with_pending_fees }}</p>
+        <p><strong>Total Pending Amount:</strong> {{ exam.total_pending_amount | currency: 'INR' }}</p>
+        <p><strong>Paid Students:</strong> {{ exam.total_students_with_paid_fees }}</p>
+        <p><strong>Total Paid Amount:</strong> {{ exam.total_paid_amount | currency: 'INR' }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="viewDetails(exam.exam_name, exam.grade.id)">View Details</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

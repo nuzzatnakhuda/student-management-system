@@ -1,0 +1,133 @@
+/* Add Fund Type Card Styling */
+.add-fund-card {
+    width: 400px;
+    background: #ffebee; /* Light pink background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  .add-fund-card mat-card-header {
+    background-color: #f48fb1; /* Rose-colored header */
+    color: white;
+    padding: 10px;
+  }
+  
+  .add-fund-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background-color: #c2185b!important; /* Deep Rose */
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-fund-btn:hover {
+    background-color: #b71c1c; /* Darker Rose on hover */
+    transform: translateY(-2px);
+  }
+  
+  .add-fund-btn:active {
+    background-color: #ad1457; /* Even darker on click */
+    transform: translateY(1px);
+  }
+  
+  /* Horizontal Rule Separator */
+  .separator-line {
+    border-top: 2px solid #f48fb1; /* Rose-colored border */
+    margin: 30px 0;
+    opacity: 0.7;
+  }
+  
+  /* Heading Styling */
+  .all-funds-heading {
+    font-size: 2rem;
+    color: #c2185b;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Fund Cards Styling */
+  .fund-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .fund-card {
+    width: calc(33.33% - 20px);
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .fund-card-content {
+    background-color: #ffebee; /* Light pink */
+    border: 2px solid #f48fb1; /* Rose-colored border */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .fund-card-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .fund-card-content mat-card-header {
+    background-color: #f48fb1;
+    color: white;
+  }
+  
+  .fund-card-content mat-card-title {
+    font-size: 1.4rem;
+    color: #c2185b;
+    font-weight: bold;
+  }
+  
+  /* View Details Button Styling */
+  .view-details-btn {
+    width: 100%;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background-color: #f48fb1 !important; /* Light pink */
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #c2185b; /* Deep Rose on hover */
+    transform: translateY(-2px);
+  }
+  
+  .view-details-btn:active {
+    background-color: #ad1457; /* Darker Rose on click */
+    transform: translateY(1px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 800px) {
+    .fund-cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .fund-card {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+  

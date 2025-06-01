@@ -1,0 +1,59 @@
+/* Card container with rounded corners and shadow */
+.employee-card {
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: #ffffff;
+    max-width: 800px;
+  }
+  
+  /* Header with a refined background color and centered text */
+  .employee-card-header {
+    background-color: #f9d7e3;
+    color: #5a0221;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px 12px 0 0; /* Rounded top corners */
+  }
+  
+  /* Title with larger font size */
+  .employee-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  /* Content padding */
+  .employee-card-content {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Grid layout for employee details */
+  .employee-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    font-size: 16px;
+    color: #333333; /* Dark grey for better readability */
+  }
+  
+  .employee-info p {
+    margin: 10px 0;
+    line-height: 1.6; /* Better spacing between lines */
+  }
+  
+  /* Bold the label to distinguish from the data */
+  .employee-info p strong {
+    font-weight: 700;
+    color: #5a0221;
+
+  }
+  
+  /* Add a subtle border at the bottom of the employee details section */
+  .employee-details p:last-child {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+  }
+  

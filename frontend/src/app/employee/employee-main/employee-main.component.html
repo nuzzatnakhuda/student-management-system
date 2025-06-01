@@ -1,0 +1,43 @@
+<div class="employee-overview">
+  <!-- Total Employee Count Card and Add Employee Card placed side by side -->
+  <div class="overview-cards-container">
+    <mat-card class="overview-card total-employee-card">
+      <mat-card-header>
+        <mat-card-title class="card-title">Total Employees</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>{{ totalEmployeeCount }}</h2>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="view-details-btn" (click)="viewAll()">View</button>
+      </mat-card-actions>
+    </mat-card>
+    
+    <mat-card class="overview-card add-employee-card">
+      <mat-card-header>
+        <mat-card-title class="card-title">Add New Employee</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <button class="add-employee-btn" (click)="addEmployee()">Add Employee</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Horizontal Rule -->
+  <hr class="divider">
+
+  <!-- Designation Wise Employee Count Cards -->
+  <div class="card-container">
+    <mat-card *ngFor="let item of employeeCounts" class="overview-card">
+      <mat-card-header>
+        <mat-card-title class="card-title">Total {{ item.designation }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ item.employeeCount }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="view-details-btn" (click)="viewDetails(item.designationId)">View</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

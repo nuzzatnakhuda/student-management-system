@@ -1,0 +1,41 @@
+<h2 mat-dialog-title class="dialog-title">Make Expense</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="expenseForm" class="expense-form">
+    <!-- Transaction Date -->
+    <mat-form-field class="form-field full-width">
+      <mat-label>Transaction Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="transaction_date" class="input-field">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="expenseForm.get('transaction_date')?.hasError('required')" class="error-text">
+        Transaction date is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Amount -->
+    <mat-form-field class="form-field full-width">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" formControlName="amount" class="input-field">
+      <mat-error *ngIf="expenseForm.get('amount')?.hasError('required')" class="error-text">
+        Amount is required
+      </mat-error>
+      <mat-error *ngIf="expenseForm.get('amount')?.hasError('min')" class="error-text">
+        Amount must be greater than 0
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field class="form-field full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" class="input-field"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button class="cancel-btn" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button class="confirm-btn" (click)="onConfirm()" [disabled]="!expenseForm.valid">
+    Confirm
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,35 @@
+/* Ensure the layout takes the full viewport height */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar and main content container */
+.content-container {
+  display: flex;
+  flex-grow: 1; /* Takes all remaining space between header and footer */
+  overflow: hidden; /* Prevent unwanted scrolling here */
+}
+
+/* Main content area styling */
+.main-content {
+  flex-grow: 1; /* Stretches to fill space */
+  padding: 20px;
+  overflow-y: auto; /* Enables scrolling for content if it overflows */
+}
+
+/* Footer always at the bottom */
+app-footer {
+  flex-shrink: 0; /* Prevent the footer from shrinking */
+  position: relative; /* Ensure the footer stays within the flow */
+}
+
+/* Body and html settings to prevent scrolling */
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Prevent body scrolling */
+}

@@ -1,0 +1,102 @@
+/* Employee Card Styles */
+.employee-card {
+    background: #fff0f5; /* Lighter Rose Background */
+    border: 1px solid #f7a1b5; /* Soft Pink Border */
+    box-shadow: 0px 6px 15px rgba(255, 0, 56, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 800px; /* Increased width of the card */
+    margin: 30px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Card Header */
+  .employee-card-header {
+    background: #e60053; /* Rich Red */
+    color: white;
+    padding: 15px 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(255, 0, 56, 0.2);
+  }
+  
+  /* Card Title */
+  .employee-title {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  
+  /* Sections */
+  h3 {
+    color: #d90429; /* Vivid Red */
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    border-bottom: 3px solid #e60053;
+    padding-bottom: 5px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Employee Details */
+  .employee-details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  
+  /* Employee Info Styling */
+  .employee-info p {
+    font-size: 17px;
+    margin: 12px 0;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Bold Labels */
+  .employee-info strong {
+    color: #ff006f; /* Deep Rose Red */
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  /* Separator */
+  hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #ff006f, #f7a1b5);
+    margin: 20px 0;
+  }
+  
+  /* Provident Fund Highlight */
+  .has-pf {
+    font-size: 17px;
+    font-weight: 600;
+    color: #e60053; /* Rich Red */
+  }
+  
+  .no-pf {
+    font-size: 17px;
+    font-weight: 600;
+    color: #777; /* Gray for No PF */
+  }
+  
+  /* Hover Effect */
+  .employee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(255, 0, 56, 0.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .employee-card {
+      max-width: 95%;
+      padding: 20px;
+    }
+    
+    .employee-title {
+      font-size: 18px;
+    }
+  }
+  

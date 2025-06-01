@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Confirm Update</h2>
+<mat-dialog-content>
+  Are you sure you want to update the fees to {{ data.newFees }}?
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="warn" (click)="onConfirm()">Confirm</button>
+</mat-dialog-actions>

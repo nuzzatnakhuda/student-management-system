@@ -1,0 +1,30 @@
+mat-dialog-title {
+    background-color: #f44336;  /* Red background for title */
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  mat-dialog-actions {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  button {
+    margin: 0 10px;
+  }
+  
+  button.mat-raised-button {
+    background-color: #f44336; /* Red color */
+    color: white;
+  }
+  
+  button.mat-raised-button:hover {
+    background-color: #d32f2f; /* Darker red */
+  }
+  
+  button.mat-button {
+    background-color: transparent;
+    color: #f44336;
+  }
+  

@@ -1,0 +1,82 @@
+.dialog-title {
+    color: #b71c1c; /* Deep red for strong emphasis */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background: #fff5f5; /* Light rose background */
+    border-radius: 8px;
+  }
+  
+  .form-field {
+    width: 100%;
+    background: #ffe5e5; /* Soft pink field background */
+    border-radius: 4px;
+  }
+  
+  .date-input {
+    color: #880e4f; /* Dark rose color */
+    font-weight: bold;
+  }
+  
+  mat-form-field {
+    .mat-mdc-text-field-wrapper {
+      background-color: #ffe5e5 !important; /* Lighter rose input field */
+      border-radius: 4px;
+    }
+    
+    .mat-mdc-floating-label {
+      color: #b71c1c !important; /* Dark rose label */
+    }
+  
+    .mat-mdc-form-field-flex {
+      border-bottom: 2px solid #b71c1c !important; /* Darker red underline */
+    }
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 16px;
+    gap: 8px;
+    background: #fff5f5;
+    border-top: 1px solid #b71c1c; /* Light border for section separation */
+  }
+  
+  .cancel-button {
+    color: #b71c1c;
+    font-weight: bold;
+    border: 1px solid #b71c1c;
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: all 0.3s;
+    
+    &:hover {
+      background: #b71c1c;
+      color: #fff;
+    }
+  }
+  
+  .generate-button {
+    background: #d32f2f !important; /* Primary dark red */
+    color: white !important;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s;
+  
+    &:hover {
+      background: #b71c1c !important;
+    }
+  
+    &:disabled {
+      background: #ffcdd2 !important; /* Light pink when disabled */
+      color: #fff;
+    }
+  }
+  

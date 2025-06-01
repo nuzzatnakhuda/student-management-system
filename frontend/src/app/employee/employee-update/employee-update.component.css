@@ -1,0 +1,48 @@
+.employee-form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .employee-form-card {
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-card-header {
+    background-color: #c2185b;
+    color: white;
+  }
+  
+  mat-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  mat-form-field {
+    margin-bottom: 16px;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #c2185b;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  button:disabled {
+    background-color: #f0f0f0;
+    color: #bdbdbd;
+  }
+
+  .mat-icon-button {
+    margin-right: 8px; /* Adjust spacing if necessary */
+  }
+  

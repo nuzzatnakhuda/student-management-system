@@ -1,0 +1,96 @@
+/* Payroll Dialog Styling */
+.payroll-dialog {
+    background-color: #fff5f7; /* Soft rose background */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px; /* Set max width */
+  }
+  
+  /* Title Styling */
+  .payroll-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e63946; /* Deep rose red */
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Full-width Form Fields */
+  .full-width {
+    width: 100% !important;
+  }
+  
+  /* Material Form Fields */
+  .payroll-field {
+    width: 100%;
+  }
+  
+  .payroll-field .mat-form-field-label {
+    color: #e63946 !important; /* Rose Red Label */
+  }
+  
+  .payroll-field .mat-form-field-outline {
+    color: #e63946;
+  }
+  
+  .payroll-field .mat-form-field-outline-thick {
+    border-color: #e63946;
+  }
+  
+  /* Read-Only Inputs */
+  .readonly-input {
+    background-color: #fce4ec;
+    color: #e63946;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Buttons */
+  .payroll-actions {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 15px;
+  }
+  
+  .payroll-btn {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Cancel Button */
+  .cancel-btn {
+    color: #e63946;
+  }
+  
+  .cancel-btn:hover {
+    background-color: rgba(230, 57, 70, 0.1);
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    background-color: #e63946;
+    color: white;
+  }
+  
+  .submit-btn:hover {
+    background-color: #c2185b;
+    transform: translateY(-2px);
+  }
+  
+  /* Textarea Styling */
+  .remarks-area {
+    height: 80px;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .payroll-dialog {
+      max-width: 100%;
+    }
+  }
+  

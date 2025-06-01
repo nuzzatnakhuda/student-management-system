@@ -1,0 +1,270 @@
+<mat-card class="form-card">
+    <mat-card-header>
+        <mat-card-title>Add Student Information</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+            <!-- Personal Information Section -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+
+                <!-- First Name -->
+                <mat-form-field class="full-width">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="first_name" required />
+                    <mat-error *ngIf="f['first_name'].hasError('required')">
+                        First Name is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Father's Name -->
+                <mat-form-field class="full-width">
+                    <mat-label>Father's Name</mat-label>
+                    <input matInput formControlName="father_name" />
+                    <mat-error *ngIf="f['father_name'].hasError('required')">
+                        Father's Name is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Last Name -->
+                <mat-form-field class="full-width">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="last_name" required />
+                    <mat-error *ngIf="f['last_name'].hasError('required')">
+                        Last Name is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Date of Birth -->
+                <mat-form-field class="full-width">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="dobPicker" formControlName="date_of_birth"
+                        (focus)="dobPicker.open()" placeholder="Select Date of Birth" required />
+                    <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dobPicker></mat-datepicker>
+                    <mat-error *ngIf="f['date_of_birth'].hasError('required')">
+                        Date of Birth is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Gender -->
+                <mat-form-field class="full-width">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option value="M">Male</mat-option>
+                        <mat-option value="F">Female</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="f['gender'].hasError('required')">
+                        Gender is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Address -->
+                <mat-form-field class="full-width">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address" />
+                    <mat-error *ngIf="f['address'].hasError('required')">
+                        Address is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Contact Number -->
+                <mat-form-field class="full-width">
+                    <mat-label>Contact Number</mat-label>
+                    <input matInput formControlName="contact_number" />
+                    <mat-error *ngIf="f['contact_number'].hasError('required')">
+                        Contact Number is required.
+                    </mat-error>
+                    <mat-error *ngIf="f['contact_number'].hasError('pattern')">
+                        Please enter a valid 10-digit contact number.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Email -->
+                <mat-form-field class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" />
+                    <mat-error *ngIf="f['email'].hasError('required')">
+                        Email is required.
+                    </mat-error>
+                    <mat-error *ngIf="f['email'].hasError('email')">
+                        Please enter a valid email address.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Place of Birth -->
+                <mat-form-field class="full-width">
+                    <mat-label>Place of Birth</mat-label>
+                    <input matInput formControlName="place_of_birth" />
+                    <mat-error *ngIf="f['place_of_birth'].hasError('required')">
+                        Place of Birth is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <!-- Family Information Section -->
+            <div class="form-section">
+                <h3>Family Information</h3>
+
+                <!-- Religion -->
+                <mat-form-field class="full-width">
+                    <mat-label>Religion</mat-label>
+                    <input matInput formControlName="religion" />
+                    <mat-error *ngIf="f['religion'].hasError('required')">
+                        Religion is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Caste -->
+                <mat-form-field class="full-width">
+                    <mat-label>Caste</mat-label>
+                    <input matInput formControlName="caste" />
+                    <mat-error *ngIf="f['caste'].hasError('required')">
+                        Caste is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Father's Occupation -->
+                <mat-form-field class="full-width">
+                    <mat-label>Father's Occupation</mat-label>
+                    <input matInput formControlName="father_occupation" />
+                </mat-form-field>
+
+                <!-- Occupation Address -->
+                <mat-form-field class="full-width">
+                    <mat-label>Occupation Address</mat-label>
+                    <input matInput formControlName="occupation_address" />
+                </mat-form-field>
+            </div>
+
+            <!-- Enrollment Information Section -->
+            <div class="form-section">
+                <h3>Enrollment Information</h3>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Academic Year</mat-label>
+                    <mat-select formControlName="academic_year" required>
+                        <mat-option *ngFor="let year of academicYears" [value]="year">
+                            {{ year }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="f['academic_year'].touched && f['academic_year'].hasError('required')">
+                        Academic Year is required.
+                    </mat-error>
+                </mat-form-field>                
+
+                <!-- Grade Dropdown -->
+                <mat-form-field class="full-width">
+                    <mat-label>Grade</mat-label>
+                    <mat-select formControlName="grade">
+                        <mat-option *ngFor="let grade of grades" [value]="grade.id">
+                            {{ grade.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="f['grade'].hasError('required')">
+                        Grade is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Section Dropdown -->
+                <mat-form-field class="full-width">
+                    <mat-label>Section</mat-label>
+                    <mat-select formControlName="grade_section_id" [disabled]="!sections.length">
+                        <mat-option *ngFor="let section of sections" [value]="section.id">
+                            {{ section.name }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="f['grade_section_id'].hasError('required')">
+                        Section is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Enrollment Date -->
+                <mat-form-field class="full-width">
+                    <mat-label>Enrollment Date</mat-label>
+                    <input matInput [matDatepicker]="enrollmentPicker" formControlName="enrollment_date"
+                        (focus)="enrollmentPicker.open()" placeholder="Select Enrollment Date" required />
+                    <mat-datepicker-toggle matSuffix [for]="enrollmentPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #enrollmentPicker></mat-datepicker>
+                    <mat-error *ngIf="f['enrollment_date'].hasError('required')">
+                        Enrollment Date is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Remarks -->
+                <mat-form-field class="full-width">
+                    <mat-label>Remarks</mat-label>
+                    <textarea matInput formControlName="remarks"></textarea>
+                </mat-form-field>
+            </div>
+
+            <!-- New Admission Checkbox -->
+            <mat-checkbox formControlName="newAdmission" (change)="toggleAdmissionFee()">
+                New Admission
+            </mat-checkbox>
+
+            <!-- Admission Fee Field (Only visible if New Admission is checked) -->
+            <div *ngIf="showAdmissionFee">
+                <mat-form-field class="full-width">
+                    <mat-label>Admission Fee</mat-label>
+                    <input matInput formControlName="admission_fee" type="number" />
+                    <mat-error *ngIf="f['admission_fee'].hasError('required')">
+                        Admission Fee is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Semester Selection -->
+                <mat-form-field class="full-width">
+                    <mat-label>Select Semester</mat-label>
+                    <mat-select formControlName="semester" (selectionChange)="onSemesterChange($event.value)">
+                        <mat-option *ngFor="let sem of semesters" [value]="sem.semester">
+                            {{ sem.semester }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="f['semester'].hasError('required')">
+                        Semester is required.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>Payment Date</mat-label>
+                    <input matInput [matDatepicker]="paymentDatePicker" formControlName="payment_date"
+                        (focus)="paymentDatePicker.open()" placeholder="Select Payment Date" required />
+                    <mat-datepicker-toggle matSuffix [for]="paymentDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #paymentDatePicker></mat-datepicker>
+                    <mat-error *ngIf="f['payment_date'].hasError('required')">
+                        Payment Date is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <!-- Optional Section for Past School Information -->
+            <div class="form-section">
+                <mat-checkbox formControlName="addPastSchool" (change)="togglePastSchool()">
+                    Add Past School Information
+                </mat-checkbox>
+
+                <div *ngIf="showPastSchool">
+                    <!-- Past Academic Year -->
+                    <mat-form-field class="full-width">
+                        <mat-label>Past Academic Year</mat-label>
+                        <input matInput formControlName="past_academic_year" placeholder="e.g., 2022-2023" />
+                        <mat-error *ngIf="f['past_academic_year'].hasError('pattern')">
+                            Past Academic Year must be in the format YYYY-YYYY (e.g., 2022-2023).
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-buttons">
+                <button mat-raised-button color="primary" type="submit" [disabled]="studentForm.invalid">
+                    Submit
+                </button>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>

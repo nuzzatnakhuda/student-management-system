@@ -1,0 +1,107 @@
+/* Style for exam fee container */
+.exam-fee-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* Align cards to the left */
+}
+
+.exam-card {
+  width: 22%; /* Adjust card width to fit 4 cards per row */
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: #f5c6cb; /* Soft pastel rose-red */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.exam-header {
+  background-color: #f8d7da; /* Lighter pastel rose-red */
+  color: #e74c3c; /* Soft red text */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.exam-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.exam-content {
+  padding: 15px;
+  color: #6c3e3e; /* Slightly darker reddish-brown for better contrast */
+}
+
+.view-details-btn {
+  background-color: #f7a1b2; /* Soft pastel pink button */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.view-details-btn:hover {
+  background-color: #e74c3c; /* Slightly darker red on hover */
+}
+
+/* Style for grade summary cards */
+.exam-fee-summary-container {
+  margin-top: 40px;
+}
+
+.summary-title {
+  font-size: 1.5rem;
+  color: #e74c3c; /* Soft red text */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.summary-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* Align cards to the left */
+}
+
+.summary-card {
+  width: 22%; /* Adjust card width to fit 4 cards per row */
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: #f8d7da; /* Lighter pastel pink */
+  border-radius: 8px;
+}
+
+.summary-header {
+  background-color: #fddde6; /* Very soft pastel pink */
+  color: #e74c3c; /* Soft red text */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.summary-title {
+  font-size: 1.25rem;
+}
+
+.summary-content {
+  padding: 10px;
+  color: #6c3e3e; /* Slightly darker reddish-brown text */
+}
+
+.summary-info {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #6c3e3e; /* Slightly darker text */
+}
+
+.custom-hr {
+  margin-top: 40px;
+  border: 0;
+  border-top: 2px solid #f7a1b2; /* Pastel pink divider */
+  margin-bottom: 40px;
+}
+
+.exam-heading{
+  font-size: 25px;
+  color: #f5214c;
+}

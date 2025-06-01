@@ -1,0 +1,95 @@
+/* Overall Table Container */
+.table-container {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+    background: #fdeff2; /* Light pastel rose background */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table Titles */
+  .table-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #b22222; /* Deep rose color */
+    margin-bottom: 15px;
+  }
+  
+  /* Mat Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Table Header Styling */
+  th {
+    background-color: #f8d7da; /* Pastel pink */
+    color: #721c24; /* Deep red */
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Table Row Styling */
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #f5c6cb;
+    color: #333;
+  }
+  
+  /* Alternating Row Background */
+  tr:nth-child(even) {
+    background-color: #fff5f7;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #fdeff2;
+  }
+  
+  /* Hover Effect */
+  tr:hover {
+    background-color: #f8d7da;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #b22222; /* Rose Red */
+    color: white!important;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #8b0000; /* Darker Red */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .table-container {
+      padding: 10px;
+    }
+  
+    .table-title {
+      font-size: 1.2rem;
+    }
+  
+    table {
+      font-size: 14px;
+    }
+  
+    button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  

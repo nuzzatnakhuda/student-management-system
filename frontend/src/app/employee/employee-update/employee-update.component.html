@@ -1,0 +1,133 @@
+<div class="employee-form-container">
+    <mat-card class="employee-form-card">
+      <mat-card-header>
+        <mat-card-title>Employee Registration</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="full_name" placeholder="Enter full name">
+            <mat-error *ngIf="updateForm.get('full_name')?.hasError('required')">Full Name is required.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Date of Birth</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="date_of_birth"
+              placeholder="yyyy-MM-dd"
+              (focus)="picker.open()"
+            >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          
+  
+          <mat-form-field class="full-width">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+              <mat-option value="other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Contact Number</mat-label>
+            <input matInput formControlName="contact_number" placeholder="Enter contact number">
+            <mat-error *ngIf="updateForm.get('contact_number')?.hasError('pattern')">Invalid contact number.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="Enter email">
+            <mat-error *ngIf="updateForm.get('email')?.hasError('email')">Please enter a valid email address.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address" placeholder="Enter address"></textarea>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Aadhar</mat-label>
+            <input matInput formControlName="aadhar" placeholder="Enter Aadhar number">
+            <mat-error *ngIf="updateForm.get('aadhar')?.hasError('pattern')">Invalid Aadhar number.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Session ID</mat-label>
+            <input matInput formControlName="session_id">
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Designation</mat-label>
+            <mat-select formControlName="designation_id">
+              <mat-option *ngFor="let designation of designations" [value]="designation.id">
+                {{ designation.designation }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Date of Join</mat-label>
+            <input 
+              matInput 
+              [matDatepicker]="joinDatePicker" 
+              formControlName="date_of_join" 
+              placeholder="yyyy-MM-dd" 
+              (focus)="joinDatePicker.open()"
+            >
+            <mat-datepicker-toggle matSuffix [for]="joinDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #joinDatePicker></mat-datepicker>
+          </mat-form-field>
+          
+  
+          <mat-form-field class="full-width">
+            <mat-label>Salary</mat-label>
+            <input 
+              matInput 
+              formControlName="salary" 
+              placeholder="Enter salary" 
+              type="number" 
+              (focus)="clearZeroValue()"
+            >
+          </mat-form-field>
+          
+  
+          <mat-form-field class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" placeholder="Enter username">
+          </mat-form-field>
+  
+          <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hidePassword ? 'password' : 'text'"
+              formControlName="password"
+              placeholder="Enter password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              type="button"
+              (click)="togglePasswordVisibility()"
+              [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'"
+              [attr.aria-pressed]="!hidePassword"
+            >
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+          
+          
+  
+          <button mat-raised-button color="primary" type="submit" [disabled]="updateForm.invalid">Submit</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

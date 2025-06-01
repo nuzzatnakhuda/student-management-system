@@ -1,0 +1,125 @@
+/* Dialog Container */
+.mat-dialog-container {
+    background: #ffebee; /* Light pink background for the dialog */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Dialog Title */
+  .dialog-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #c2185b !important; /* Deep rose color */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Dialog Content */
+  .dialog-content {
+    padding: 20px;
+    background: #fff0f1; /* Light pink background for the whole dialog content */
+  }
+  
+  /* Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Input Fields */
+  .mat-form-field {
+    background-color: transparent !important; /* Ensure no background on form fields */
+    font-size: 1rem;
+  }
+  
+  /* Label and Input Text */
+  .mat-label {
+    font-size: 1rem;
+    color: #c2185b; /* Deep rose color */
+  }
+  
+  input,
+  textarea {
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #f48fb1;
+    background-color: transparent; /* Transparent background for input fields */
+    color: #333;
+  }
+  
+  /* Focused Input Fields */
+  input:focus,
+  textarea:focus {
+    border-color: #c2185b; /* Deep rose border on focus */
+    outline: none;
+  }
+  
+  /* Error Styling */
+  .mat-error {
+    color: #d32f2f; /* Red color for error messages */
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  /* Buttons */
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Cancel Button Styling */
+  button.mat-button {
+    background-color: #f48fb1; /* Light rose for cancel button */
+    color: white;
+    border: none;
+  }
+  
+  button.mat-button:hover {
+    background-color: #c2185b; /* Darker rose on hover */
+  }
+  
+  /* Save Button Styling */
+  button.mat-button[color='primary'] {
+    background-color: #c2185b; /* Deep rose for save button */
+    color: white;
+    border: none;
+  }
+  
+  button.mat-button[color='primary']:hover {
+    background-color: #b71c1c; /* Darker rose on hover */
+  }
+  
+  /* Add Fund Type Dialog */
+  .add-fund-dialog .mat-dialog-content {
+    background-color: #fff0f1; /* Light pink background */
+    padding: 20px;
+  }
+  
+  /* General Styling for Dialog */
+  .mat-dialog-container {
+    border-radius: 8px;
+    background: #ffebee; /* Light pink background for the dialog container */
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  

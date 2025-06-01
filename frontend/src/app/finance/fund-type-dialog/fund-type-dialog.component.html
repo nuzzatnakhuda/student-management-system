@@ -1,0 +1,34 @@
+<h2 mat-dialog-title class="dialog-title">Add Fund Type</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="fundForm" (ngSubmit)="onSubmit()" class="fund-form">
+    <mat-form-field class="full-width form-field">
+      <mat-label>Fund Name</mat-label>
+      <input matInput formControlName="name" required class="input-field" />
+      <mat-error *ngIf="fundForm.get('name')?.hasError('required')">
+        Fund Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width form-field">
+      <mat-label>Initial Balance</mat-label>
+      <input matInput formControlName="initial_balance" type="number" required class="input-field" />
+      <mat-error *ngIf="fundForm.get('initial_balance')?.hasError('required')">
+        Initial Balance is required
+      </mat-error>
+      <mat-error *ngIf="fundForm.get('initial_balance')?.hasError('min')">
+        Initial Balance must be greater than 0
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width form-field">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" class="input-field"></textarea>
+    </mat-form-field>
+
+    <div mat-dialog-actions class="dialog-actions">
+      <button mat-button (click)="onNoClick()" class="cancel-btn">Cancel</button>
+      <button mat-button type="submit" [disabled]="!fundForm.valid" class="save-btn">Save</button>
+    </div>
+  </form>
+</mat-dialog-content>

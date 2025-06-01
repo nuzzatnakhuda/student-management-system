@@ -1,0 +1,80 @@
+<div class="generate-fee-container">
+  <!-- Generate Salary Card -->
+  <mat-card class="summary-card generate-fees-card">
+    <h3 class="card-title">Generate Salary</h3>
+    <mat-card-actions>
+      <button class="generate-fees-btn" (click)="onGenerateSalary()">Generate Salary</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- View Salary Card -->
+  <mat-card class="summary-card view-salary-card">
+    <h3 class="card-title">View Salary</h3>
+    <mat-card-actions>
+      <button class="view-salary-btn" (click)="onViewSalary()">View Salary</button>
+    </mat-card-actions>
+  </mat-card>
+  
+  <!-- Total Pending Salary Card -->
+  <mat-card class="summary-card total-salary-card" *ngIf="totalPendingSalary !== null">
+    <h3 class="card-title">Total Pending Salary</h3>
+    <mat-card-content>
+      <p><strong>Amount:</strong> ₹{{ totalPendingSalary | number:'1.0-2' }}</p>
+      <p><strong>Employees:</strong> {{ employeeCount }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="view-details-btn" (click)="onViewAllDetails()">View</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!-- Month-wise Pending Salary Section -->
+<div class="month-wise-cards-container" *ngIf="monthKeys.length > 0">
+  <h2 class="section-heading">Month-Wise Pending Salaries</h2>
+
+  <div class="month-wise-card-container">
+    <mat-card class="summary-card month-wise-card" *ngFor="let month of monthKeys">
+      <h3 class="card-title">{{ month | date: 'MMMM yyyy' }}</h3>
+      
+      <mat-card-content>
+        <!-- Pending Amounts in Red -->
+         <div>
+          <p><strong>Total Salary:</strong> 
+            <span class="pending-amount">₹{{ getTotalAmount(monthWiseSalaryData[month]?.total_pending_salary,monthWiseSalaryData[month]?.total_pending_pf,monthWiseSalaryData[month]?.total_paid_salary,monthWiseSalaryData[month]?.total_paid_pf) | number:'1.0-2' }}</span>
+          </p>
+          <p><strong>Total Employees:</strong> 
+            <span class="pending-amount">{{ getTotalEmp(monthWiseSalaryData[month]?.total_pending_employees, monthWiseSalaryData[month]?.employees_who_received_salary) }}</span>
+          </p>
+         </div>
+         <div class="pending">
+        <p><strong>Pending Salary:</strong> 
+          <span class="pending-amount">₹{{ monthWiseSalaryData[month]?.total_pending_salary | number:'1.0-2' }}</span>
+        </p>
+        <p><strong>Pending Provident Fund:</strong> 
+          <span class="pending-amount">₹{{ monthWiseSalaryData[month]?.total_pending_pf | number:'1.0-2' }}</span>
+        </p>
+        <p><strong>Employees with Pending Salary:</strong> 
+          <span class="pending-amount">{{ monthWiseSalaryData[month]?.total_pending_employees }}</span>
+        </p>
+      </div>
+    
+        <!-- Paid Amounts in Green -->
+         <div class="paid">
+        <p><strong>Paid Salary:</strong> 
+          <span class="paid-amount">₹{{ monthWiseSalaryData[month]?.total_paid_salary | number:'1.0-2' }}</span>
+        </p>
+        <p><strong>Paid Provident Fund:</strong> 
+          <span class="paid-amount">₹{{ monthWiseSalaryData[month]?.total_paid_pf | number:'1.0-2' }}</span>
+        </p>
+        <p><strong>Employees Paid:</strong> 
+          <span class="paid-amount">{{ monthWiseSalaryData[month]?.employees_who_received_salary }}</span>
+        </p>
+      </div>
+      </mat-card-content>
+    
+      <mat-card-actions>
+        <button class="view-details-btn" (click)="onViewDetails(month)">View</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

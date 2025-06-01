@@ -1,0 +1,51 @@
+<mat-card *ngIf="employee" class="employee-card">
+    <mat-card-header class="employee-card-header">
+      <mat-card-title class="employee-title">Employee Details: {{ employee.full_name }}</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content class="employee-card-content">
+      
+      <!-- Personal Information Section -->
+      <h3>Personal Information</h3>
+      <div class="employee-details">
+        <div class="employee-info">
+          <p><strong>Full Name: </strong>{{ employee.full_name }}</p>
+          <p><strong>Date of Birth: </strong>{{ employee.date_of_birth | date:'yyyy-MM-dd' }}</p>
+          <p><strong>Gender: </strong>{{ employee.gender }}</p>
+          <p><strong>Contact Number: </strong>{{ employee.contact_number }}</p>
+          <p><strong>Email: </strong>{{ employee.email }}</p>
+          <p><strong>Address: </strong>{{ employee.address }}</p>
+          <p><strong>Aadhar: </strong>{{ employee.aadhar }}</p>
+        </div>
+      </div>
+  
+      <hr>
+  
+      <!-- Job Details Section -->
+      <h3>Job Details</h3>
+      <div class="employee-details">
+        <div class="employee-info">
+          <p><strong>Date of Join: </strong>{{ employee.job_detail.date_of_join | date:'yyyy-MM-dd' }}</p>
+          <p><strong>Session: </strong>{{ employee.job_detail.session.session }}</p>
+          <p><strong>Designation: </strong>{{ employee.job_detail.designation.designation }}</p>
+          <p><strong>Salary: </strong>{{ employee.salary.salary | currency:'INR' }}</p>
+        </div>
+      </div>
+  
+      <hr>
+  
+      <!-- Provident Fund Details Section -->
+      <h3>Provident Fund Details</h3>
+      <div class="employee-details">
+        <div class="employee-info">
+          <p><strong>Has Provident Fund: </strong> 
+            <span *ngIf="employee.hasPF; else noPF">Yes</span>
+            <ng-template #noPF>No</ng-template>
+          </p>
+          <p *ngIf="employee.hasPF"><strong>Provident Balance: </strong>{{ employee.employee_provident.accumulated_balance | currency:'INR' }}</p>
+        </div>
+      </div>
+  
+    </mat-card-content>
+  </mat-card>
+  
